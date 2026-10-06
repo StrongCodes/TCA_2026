@@ -1,0 +1,252 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.DivPrincipal{
+    display: flex;
+    background-color: rgb(239, 239, 232);
+    width: 100%;
+    height: 300vw;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.DivCabeçario{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 5vw;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    z-index: 2;
+    user-select: none;
+}
+
+.DivLogoCabeçario{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 1%;
+    user-select: none;
+}
+
+.ParagrafoTituloCabeçario{
+    display: flex;
+    color: white;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    position: absolute;
+    left: 8%;
+    user-select: none;
+}
+
+.DivInicial{
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("./imagens/ImagemInicial.png");
+    width: 100vw;
+    height: 44.9vw;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    z-index: 1;
+    user-select: none;
+}
+
+.ParagrafoTextoUm{
+    display: flex;
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    user-select: none;
+}
+
+.ParagrafoTextoDois{
+    display: flex;
+    color: white;
+    font-size: 25px;
+    font-family: Verdana, sans-serif;
+    position: absolute;
+    left: 5%;
+    top: 55%;
+    user-select: none;
+}
+
+.DivSaibaMais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(206, 0, 0);
+    
+    color: white;
+    font-weight: bold;
+    font-family: italic;
+    font-size: 20px;
+    
+    width: 160px;
+    height: 45px;
+    border-bottom: 10px solid rgb(155, 0, 0);
+    border-left: 10px solid rgb(53, 0, 0);;
+
+    position: absolute;
+    left: 5%;
+    top: 75%;
+    user-select: none;
+}
+
+.ParagrafoOfertas{
+    display: flex;
+    color: white;
+    position: absolute;
+    top: 85%;
+    font-family: italic;
+    font-weight: bold;
+    font-size: 20px;
+    user-select: none;
+}
+
+.DivPromoUm{
+    display: flex;
+    width: 610px;
+    height: 490px;
+    position: absolute;
+    left: 3%;
+    top: 95%;
+    user-select: none;
+}
+
+.DivPromoDois{
+    display: flex;
+    width: 610px;
+    height: 490px;
+    position: absolute;
+    right: 3%;
+    top: 95%;
+    user-select: none;
+}
+
+.DivPainelCarros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vw;
+    gap: 10px;
+    user-select: none;
+    position: absolute;
+    top: 220%;
+}
+
+.DivCategorias{
+    display: flex;
+    gap: 10px;
+    user-select: none;
+    position: absolute;
+}
+
+@keyframes CategoriaSelecionada {
+    from{
+        background-color: transparent;
+        color: black;
+    }
+    to{
+        background-color: black;
+        color: white;
+    }
+}
+
+@keyframes CategoriaNaoSelecionada {
+    from{
+        background-color: black;
+        color: white;
+    }
+    to{
+        background-color: transparent;
+        color: black;
+    }
+}
+
+.DivCategoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: black;
+    height: 30px;
+    padding: 10px 20px;
+    border-bottom: 3px solid black;
+    animation: none;
+    user-select: none;
+}
+
+.DivCategoriaAnterior{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(206, 0, 0);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 35px;
+    font-family: italic;
+    font-weight: bold;
+
+    position: absolute;
+    top: 100%;
+    left: 2%;
+    user-select: none;
+    z-index: 2;
+}
+
+.DivCategoriaSeguinte{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(206, 0, 0);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 35px;
+    font-family: italic;
+    font-weight: bold;
+
+    position: absolute;
+    top: 100%;
+    right: 2%;
+    user-select: none;
+    z-index: 2;
+}
+
+.DivEsteira{
+    display: flex;
+    gap: 150px;
+    user-select: none;
+    position: absolute;
+    top: 70%;
+    left: 14.5%;
+    z-index: 1;
+}
+
+.DivCarroExibido{
+    display: flex;
+    background-color: red;
+    width: 360px;
+    height: 300px;
+}

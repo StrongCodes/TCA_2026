@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <title>spartacus.com</title>
+    <link rel="icon" href="./imagens/Spartacus_Logo.png" type="./imagens/Spartacus_Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="DivPrincipal" class="DivPrincipal">
+        
+        <div id="DivCabeçario" class="DivCabeçario">
+            <img id="DivLogoCabeçario" class="DivLogoCabeçario" src="./imagens/Spartacus_Logo.png">
+            <p id="ParagrafoTituloCabeçario" class="ParagrafoTituloCabeçario"">Spartacus</p>
+        </div>
+        
+        <div id="DivInicial" class="DivInicial">
+            <p id="ParagrafoTextoUm" class="ParagrafoTextoUm">Bem Vindo<br>à Era<br>Spartacus!</p>
+            <p id="ParagrafoTextoDois" class="ParagrafoTextoDois">De dentro de um Spartacus,<br>cada paisagem tem um novo significado!</p>
+            <div id="DivSaibaMais" class="DivSaibaMais">SAIBA MAIS</div>
+            <p id="ParagrafoOfertas" class="ParagrafoOfertas">OFERTAS ▼</p>
+            <img id="DivPromoUm" class="DivPromoUm" src="./imagens/Promo1.png">
+            <img id="DivPromoDois" class="DivPromoDois" src="./imagens/Promo2.png">
+        </div>
+
+        <div id="DivPainelCarros" class="DivPainelCarros">
+            <div id="DivCategorias" class="DivCategorias">
+                <div id="0" class="DivCategoria" onclick="SelecionouCategoria(0)">TODOS</div>
+                <div id="1" class="DivCategoria" onclick="SelecionouCategoria(1)">PASSEIO</div>
+                <div id="2" class="DivCategoria" onclick="SelecionouCategoria(2)">SUV</div>
+                <div id="3" class="DivCategoria" onclick="SelecionouCategoria(3)">ESPORTIVOS</div>
+                <div id="4" class="DivCategoria" onclick="SelecionouCategoria(4)">PICAPES</div>
+                <div id="5" class="DivCategoria" onclick="SelecionouCategoria(5)">HÍBRIDOS</div>
+                <div id="6" class="DivCategoria" onclick="SelecionouCategoria(6)">UTILITÁRIOS</div>
+                <div id="7" class="DivCategoria" onclick="SelecionouCategoria(7)">ELÉTRICOS</div>
+            </div>
+
+            <div id="DivCategoriaAnterior" class="DivCategoriaAnterior" onclick="CategoriaAnterior()"><</div>
+            <div id="DivCategoriaSeguinte" class="DivCategoriaSeguinte" onclick="CategoriaSeguinte()">></div>
+
+            <div id="DivEsteira" class="DivEsteira">
+                <div id="DivCarro_1" class="DivCarroExibido"></div>
+                <div id="DivCarro_2" class="DivCarroExibido"></div>
+                <div id="DivCarro_3" class="DivCarroExibido"></div>
+                <div id="DivCarro_4" class="DivCarroExibido"></div>
+                <div id="DivCarro_5" class="DivCarroExibido"></div>
+                <div id="DivCarro_6" class="DivCarroExibido"></div>
+            </div>
+        </div>
+    
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
