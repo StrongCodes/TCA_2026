@@ -236,17 +236,19 @@ body{
 
 .DivEsteira{
     display: flex;
-    gap: 150px;
+    gap: 10px;
     user-select: none;
     position: absolute;
     top: 70%;
-    left: 14.5%;
+    left: 10%;
     z-index: 1;
 }
 
 .DivCarroExibido{
     display: flex;
-    background-color: red;
-    width: 360px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 500px;
     height: 300px;
 }
