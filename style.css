@@ -5,6 +5,18 @@ body{
     overflow-x: hidden;
 }
 
+.DivLogin{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 27%;
+    height: 615px;
+    background-color: rgb(239, 239, 232);
+    position: fixed;
+    top: 0%;
+    z-index: 16;
+}
+
 .DivPrincipal{
     display: flex;
     background-color: rgb(239, 239, 232);
@@ -15,15 +27,26 @@ body{
     user-select: none;
 }
 
+.DivFundo{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 388vw;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    z-index: 12;
+}
+
 .DivCabeçario{
     display: flex;
     background-color: black;
     width: 100%;
-    height: 5vw;
+    height: 70px;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0%;
-    z-index: 2;
+    z-index: 10;
     user-select: none;
 }
 
@@ -45,6 +68,221 @@ body{
     position: absolute;
     left: 8%;
     user-select: none;
+}
+
+.DivUsuario{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 6%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes MenuAberto {
+    from{
+        background-color: black;
+    }
+    to{
+        background-color: rgb(239, 239, 232);
+    }
+}
+
+@keyframes MenuFechado {
+    from{
+        background-color: rgb(239, 239, 232);
+    }
+    to{
+        background-color: black;
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe1_Abrir {
+    from {
+        background-color: white;
+        top: 35%;
+        width: 50%;
+        transform: rotate(0deg);
+    }
+
+    to {
+        background-color: black;
+        top: 50%;
+        width: 40%;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe1_Fechar {
+    from {
+        background-color: black;
+        top: 50%;
+        width: 40%;
+        transform: rotate(45deg);
+    }
+
+    to {
+        background-color: white;
+        top: 35%;
+        width: 50%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe2_Abrir {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe2_Fechar {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe3_Abrir {
+    from {
+        background-color: white;
+        top: 35%;
+        width: 50%;
+        transform: rotate(0deg);
+    }
+
+    to {
+        background-color: black;
+        top: 50%;
+        width: 40%;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe3_Fechar {
+    from {
+        background-color: black;
+        top: 50%;
+        width: 40%;
+        transform: rotate(-45deg);
+    }
+
+    to {
+        background-color: white;
+        bottom: 35%;
+        width: 50%;
+        transform: rotate(0deg);
+    }
+}
+
+.DivBotaoMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+
+.DivDetalhe_1{
+    display: flex;
+    background-color: white;
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    top: 35%;
+}
+
+.DivDetalhe_2{
+    display: flex;
+    background-color: white;
+    width: 50%;
+    height: 1px;
+    position: absolute;
+}
+
+.DivDetalhe_3{
+    display: flex;
+    background-color: white;
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    bottom: 35%;
+}
+
+@keyframes ApareceMenu {
+    from{
+        opacity: 0;
+        right: -20%;
+    }
+    to{
+        opacity: 1;
+        right: 0%;
+    }
+}
+
+@keyframes EscondeMenu {
+    from{
+        opacity: 1;
+        right: 0%;
+    }
+    to{
+        opacity: 0;
+        right: -20%;
+    }
+}
+
+.DivMenu{
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 350px;
+    height: 560px;
+    background-color: rgb(239, 239, 232);
+    position: absolute;
+    right: -20%;
+    top: 100%;
+    position: absolute;
+    box-shadow: 5px 5px 10px black;
+    z-index: 3;
+}
+
+.DivMenuCabeçario{
+    display: flex;
+    width: 100%;
+    height: 55px;
+    background-color: rgb(239, 239, 232);;
+    justify-content: left;
+    align-items: center;
+    color: rgb(131, 130, 130);
+    font-weight:lighter;
+    font-size: 15px;
+    border-left: 50px solid rgb(239, 239, 232);
+}
+
+.DivMenuOpçao{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: left;
+    align-items: center;
+    color: rgb(87, 86, 86);
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-left: 40px solid rgb(239, 239, 232);
 }
 
 .DivInicial{
@@ -70,7 +308,7 @@ body{
     font-weight: bold;
     font-family: Verdana, sans-serif;
     position: absolute;
-    left: 5%;
+    left: 10%;
     top: 15%;
     user-select: none;
 }
@@ -81,7 +319,7 @@ body{
     font-size: 25px;
     font-family: Verdana, sans-serif;
     position: absolute;
-    left: 5%;
+    left: 10%;
     top: 55%;
     user-select: none;
 }
@@ -90,7 +328,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(206, 0, 0);
+    background-color: rgba(228, 4, 26);
     
     color: white;
     font-weight: bold;
@@ -103,9 +341,13 @@ body{
     border-left: 10px solid rgb(53, 0, 0);;
 
     position: absolute;
-    left: 5%;
+    left: 10%;
     top: 75%;
     user-select: none;
+}
+
+.DivSaibaMais:hover{
+    transform: scale(1.05);
 }
 
 .ParagrafoOfertas{
@@ -149,7 +391,7 @@ body{
     gap: 10px;
     user-select: none;
     position: absolute;
-    top: 220%;
+    top: 185%;
 }
 
 .DivCategorias{
@@ -192,6 +434,8 @@ body{
     border-bottom: 3px solid black;
     animation: none;
     user-select: none;
+    font-family: italic;
+    font-weight: bold;
 }
 
 .DivCategoriaAnterior{
@@ -209,9 +453,13 @@ body{
 
     position: absolute;
     top: 100%;
-    left: 2%;
+    left: 1%;
     user-select: none;
     z-index: 2;
+}
+
+.DivCategoriaAnterior:hover{
+    transform: scale(1.05);
 }
 
 .DivCategoriaSeguinte{
@@ -229,9 +477,13 @@ body{
 
     position: absolute;
     top: 100%;
-    right: 2%;
+    right: 1%;
     user-select: none;
     z-index: 2;
+}
+
+.DivCategoriaSeguinte:hover{
+    transform: scale(1.05);
 }
 
 .DivEsteira{
@@ -239,16 +491,241 @@ body{
     gap: 10px;
     user-select: none;
     position: absolute;
-    top: 70%;
-    left: 10%;
+    top: 35%;
+    left: 1%;
     z-index: 1;
 }
 
-.DivCarroExibido{
+.DivCarroExibido {
     display: flex;
-    background-size: cover;
+    flex-direction: column;
+    gap: 0;
+
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 500px;
-    height: 300px;
+
+    width: 435px;
+    height: 480px;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    color: black;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.ParagrafoSaibaMaisCarro{
+    margin-top: -40px;
+    color: rgb(206, 0, 0);
+}
+
+.ParagrafoSaibaMaisCarro:hover{
+    color: gray;
+}
+
+.DivDestaque_1{
+    display: flex;
+    width: 90%;
+    height: 40vw;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 300%;
+}
+
+.DivDestaque_2{
+    display: flex;
+    width: 40%;
+    height: 35vw;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 2.7%;
+    top: 387.5%
+}
+
+.DivDestaque_3{
+    display: flex;
+    width: 60%;
+    height: 35vw;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 1.5%;
+    top: 387.5%
+}
+
+.DivSpartacusLogo{
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 490%;
+    left: 3%;
+}
+
+.ParagrafoOferta{
+    display: flex;
+    font-size: 35px;
+    color: black;
+    font-family: italic;
+    font-weight: bold;
+    position: absolute;
+    top: 486%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.DivOfertas {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    position: absolute;
+    top: 515%;
+}
+
+.DivOfertaExibida {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: white;
+    border: 1px solid gray;
+
+    width: 275px;
+    height: 520px;
+
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.DivImagemCarro_Oferta {
+    width: 100%;
+    height: 180px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    flex-shrink: 0;
+}
+
+.ParagrafoModeloCarro {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0 10px;
+    text-align: left;
+}
+
+.ParagrafoPreçoNormal {
+    margin: 5px 0;
+    text-align: center;
+    color: #555;
+    text-align: left;
+}
+
+.ParagrafoPreçoDesconto {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.Divlinha{
+    display: flex;
+    width: 90%;
+    height: 3px;
+    background-color: rgb(206, 0, 0);
+    position: absolute;
+    top: 70%;
+    left: 5.5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.ParagrafoSLOGAN{
+    display: flex;
+    color: rgb(206, 0, 0);
+    font-size: 20px;
+    position: absolute;
+    top: 0%;
+    font-weight: 900;
+}
+.DivVenhaVer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(228, 4, 26);
+    
+    color: white;
+    font-weight: bold;
+    font-family: italic;
+    font-size: 20px;
+    
+    width: 160px;
+    height: 45px;
+    border-bottom: 10px solid rgb(155, 0, 0);
+    border-left: 10px solid rgb(36, 0, 0);
+
+    position: absolute;
+    left: 18%;
+    top: 85%;
+    user-select: none;
+}
+
+.DivVenhaVer:hover{
+    transform: scale(1.05);
+}
+
+.DivRodapé{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+    background-color: rgb(24, 19, 31);
+    position: absolute;
+    top: 650%;
+}
+
+.DivLogoRodape{
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 5%;
+}
+
+.DivVoltaParaTopo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: italic;
+    position: absolute;
+    top: 5%;
+}
+
+.DivVoltaParaTopo:hover {
+    color: #555;
+    transform: scale(1.05);
 }
