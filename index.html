@@ -18,7 +18,7 @@
                 <div id="DivDetalhe_2" class="DivDetalhe_2"></div>
                 <div id="DivDetalhe_3" class="DivDetalhe_3"></div>
             </div>
-            <div id="DivUsuario" class="DivUsuario" style="background-image: url('./imagens/Usuario.png');"></div>
+            <div id="DivUsuario" class="DivUsuario" style="background-image: url('./imagens/Usuario.png');" onclick="AbreLogin()"></div>
             <div id="DivMenu" class="DivMenu">
                 <div id="DivMenuCabeçario" class="DivMenuCabeçario">MENU</div>
                 <div id="DivMenuOfertas" class="DivMenuOpçao">Ofertas</div>
@@ -28,7 +28,26 @@
             </div>
         </div>
         
-        <div id="DivLogin" class="DivLogin"></div>
+        <div id="DivLogin" class="DivLogin">
+            <div id="DivFechaLogin" class="DivFechaLogin" onclick="FechaLogin()">
+                <div id="DivDetalheLoginUm" class="DivDetalheLoginUm"></div>
+                <div id="DivDetalheLoginDois" class="DivDetalheLoginDois"></div>
+            </div>
+            <div id="DivLogoLogin" class="DivLogoLogin" style="background-image: url('./imagens/LogoLogin.png');"></div>
+            <p id="DivTituloLogin" class="DivTituloLogin">SPARTACUS ID</p>
+            <p id="ParagrafoRecepçao" class="ParagrafoRecepçao">
+                Bem-vindo à sua área, <strong>Spartacus</strong>!<br><br>
+                
+                • <strong>Avalie</strong> veículos<br>
+                • <strong>Compre</strong> veículos<br>
+                • <strong>Loque</strong> veículos
+            </p>
+            <input type="text" id="InputTextoEmailLogin">
+            <p id="ParagrafoEmail" class="ParagrafoEmail">Email</p>
+            <input type="text" id="InputTextoSenhaLogin">
+            <p id="ParagrafoSenha" class="ParagrafoSenha">Senha</p>
+            <div id="DivBotaoEntrarLogin" class="DivBotaoEntrarLogin">Entrar</div>
+        </div>
 
         <div id="DivInicial" class="DivInicial">
             <p id="ParagrafoTextoUm" class="ParagrafoTextoUm">Bem Vindo<br>à Era<br>Spartacus!</p>
@@ -248,7 +267,7 @@
         </div>
         <div id="DivRodapé" class="DivRodapé">
             <div id="DivVoltaParaTopo" class="DivVoltaParaTopo" onclick="VoltaTopo()">𖤂 Voltar para o topo</div>
-            <div id="DivLogoRodape" class="DivLogoRodape" style="background-image: url('./imagens/Spartacus_Logo.png');"></div>
+            <div id="DivLogoRodape" class="DivLogoRodape" style="background-image: url('./imagens/LogoLogin.png');"></div>
         </div>
     </div>
     <script src="script.js" defer></script>
