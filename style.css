@@ -565,7 +565,7 @@ body{
 
 .DivCategorias{
     display: flex;
-    gap: 10px;
+    gap: 5px;
     user-select: none;
     position: absolute;
 }
@@ -842,7 +842,7 @@ body{
     
     color: white;
     font-weight: bold;
-    font-family: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     
     width: 160px;
@@ -858,6 +858,66 @@ body{
 
 .DivVenhaVer:hover{
     transform: scale(1.05);
+}
+
+@keyframes AnimaçaoContato{
+    from{
+        width: 50px;
+        border-radius: 50%
+    }
+    to{
+        width: 210px;
+        border-radius: 70px;
+    }
+}
+
+@keyframes AnimaçaoContatoDois{
+    from{
+        width: 210px;
+        border-radius: 70px;
+    }
+    to{
+        width: 50px;
+        border-radius: 50%
+    }
+}
+
+.DivContato{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:#078408;
+    align-items: center;
+    position: fixed;
+    top: 83%;
+    right: 1%;
+    z-index: 15;
+    border: 5px solid white;
+    box-shadow: 5px 5px 10px black;
+}
+
+.ParagrafoContato{
+    display: none;
+    color: white;
+    font-size: 27px;
+    justify-content: left;
+    font-weight: 900;
+    position: absolute;
+    left: 5%;
+    font-family: italic;
+}
+
+.DivLogoWhatsApp{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -12.5%;
 }
 
 .DivRodapé{

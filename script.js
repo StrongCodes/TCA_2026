@@ -74,9 +74,9 @@ function CategoriaSeguinte(){
     }
 }
 
-aux = 1;
+auxMenu = 1;
 function Menu(){
-    if(aux == 1)
+    if(auxMenu == 1)
     {
 
         document.getElementById("DivBotaoMenu").style.animation = "MenuAberto 0.5s linear forwards";
@@ -90,7 +90,7 @@ function Menu(){
         document.getElementById("DivMenu").style.animation = "ApareceMenu 0.5s linear forwards"
         
         document.getElementById("DivMenu").style.display = "flex"
-        aux = 0;
+        auxMenu = 0;
     }
     else
     {
@@ -104,8 +104,10 @@ function Menu(){
         
         document.getElementById("DivMenu").style.animation = "EscondeMenu 0.5s linear forwards"
         
-        document.getElementById("DivMenu").style.display = "none"
-        aux = 1;
+        setTimeout(() => {
+            document.getElementById("DivMenu").style.display = "none"
+        }, 500)
+        auxMenu = 1;
     }
 }
 
@@ -168,4 +170,22 @@ document.getElementById("InputTextoSenhaLogin").addEventListener("blur", functio
             "AnimaçaoDoInputSenhaSemClick 0.1s linear forwards";
     }
 
+});
+
+let div = document.getElementById("DivContato");
+
+div.addEventListener("mouseenter", () => {
+    div.style.animation = "AnimaçaoContato 0.5s linear forwards";
+    setTimeout(() =>{
+        document.getElementById("ParagrafoContato").style.display = "flex";
+    }, 200)
+    document.getElementById("DivLogoWhatsApp").style.right = "-2%"
+    document.getElementById("DivLogoWhatsApp").style.transform = "scale(1.40)"
+});
+
+div.addEventListener("mouseleave", () => {
+    div.style.animation = "AnimaçaoContatoDois 0.5s linear forwards";
+    document.getElementById("ParagrafoContato").style.display = "none"
+    document.getElementById("DivLogoWhatsApp").style.right = "-12.5%"
+    document.getElementById("DivLogoWhatsApp").style.transform = "none"
 });
