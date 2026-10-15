@@ -178,7 +178,7 @@ div.addEventListener("mouseenter", () => {
     div.style.animation = "AnimaçaoContato 0.5s linear forwards";
     setTimeout(() =>{
         document.getElementById("ParagrafoContato").style.display = "flex";
-    }, 200)
+    }, 300)
     document.getElementById("DivLogoWhatsApp").style.right = "-2%"
     document.getElementById("DivLogoWhatsApp").style.transform = "scale(1.40)"
 });
@@ -189,3 +189,11 @@ div.addEventListener("mouseleave", () => {
     document.getElementById("DivLogoWhatsApp").style.right = "-12.5%"
     document.getElementById("DivLogoWhatsApp").style.transform = "none"
 });
+
+function AbreTela(Tela){
+    const Janela = window.open(`${Tela}.html`, "_blank");
+
+    if(Janela){
+        Janela.focus();
+    }
+}
