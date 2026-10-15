@@ -45,7 +45,6 @@ let intervalo = setInterval(() => {
 
 let posicaoEsteira = 0;
 
-
 function CategoriaAnterior(){
     let aux = CategoriaAtual - 1;
 
