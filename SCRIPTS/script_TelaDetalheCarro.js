@@ -1,78 +1,3 @@
-let idAnterior = 0;
-let CategoriaAtual = 0;
-
-function SelecionouCategoria(id){
-    CategoriaAtual = id;
-
-    if(CategoriaAtual == 0)
-    {
-        document.getElementById("DivCategoriaAnterior").style.display = "none"
-    }
-    else
-    {
-        document.getElementById("DivCategoriaAnterior").style.display = "flex"
-    }
-
-
-    if(CategoriaAtual == 7)
-    {
-        document.getElementById("DivCategoriaSeguinte").style.display = "none"
-    }
-    else
-    {
-        document.getElementById("DivCategoriaSeguinte").style.display = "flex"
-    }
-
-    if(CategoriaAtual >= 0)
-    {
-        document.getElementById(`${CategoriaAtual}`)
-        .style.animation = "CategoriaSelecionada 0s linear forwards"
-    }
-
-    if(idAnterior >= 0 && idAnterior != CategoriaAtual)
-    {
-        document.getElementById(`${idAnterior}`)
-        .style.animation = "CategoriaNaoSelecionada 0s linear forwards"
-    }
-    idAnterior = CategoriaAtual;
-}
-
-let intervalo = setInterval(() => {
-    SelecionouCategoria(0);
-
-    clearInterval(intervalo);
-}, 1);
-
-let posicaoEsteira = 0;
-
-function CategoriaAnterior(){
-    let aux = CategoriaAtual - 1;
-
-    if(aux >= 0)
-    {
-        SelecionouCategoria(aux);
-
-        posicaoEsteira += 1335;
-
-        document.getElementById("DivEsteira").style.transform =
-            `translateX(${posicaoEsteira}px)`;
-    }
-}
-
-function CategoriaSeguinte(){
-    let aux = CategoriaAtual + 1;
-
-    if(aux >= 0 && aux < 8)
-    {
-        SelecionouCategoria(aux);
-
-        posicaoEsteira -= 1335;
-
-        document.getElementById("DivEsteira").style.transform =
-            `translateX(${posicaoEsteira}px)`;
-    }
-}
-
 auxMenu = 1;
 function Menu(){
     if(auxMenu == 1)
@@ -108,13 +33,6 @@ function Menu(){
         }, 500)
         auxMenu = 1;
     }
-}
-
-function VoltaTopo(){
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 }
 
 function AbreLogin(){
@@ -188,11 +106,3 @@ div.addEventListener("mouseleave", () => {
     document.getElementById("DivLogoWhatsApp").style.right = "-12.5%"
     document.getElementById("DivLogoWhatsApp").style.transform = "none"
 });
-
-function AbreTela(Tela){
-    const Janela = window.open(`${Tela}.html`, "_blank");
-
-    if(Janela){
-        Janela.focus();
-    }
-}

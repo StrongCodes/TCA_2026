@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <title>spartacus.com</title>
+    <link rel="icon" href="/imagens/Spartacus_Logo.png" type="/imagens/Spartacus_Logo.png">
+    <link rel="stylesheet" href="/STYLES/style__TelaDetalheCarro.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="DivPrincipal" class="DivPrincipal">
+        <div id="DivFundo" class="DivFundo"></div>
+        <div id="DivCabeçario" class="DivCabeçario">
+            <img id="DivLogoCabeçario" class="DivLogoCabeçario" src="/imagens/Spartacus_Logo.png">
+            <p id="ParagrafoTituloCabeçario" class="ParagrafoTituloCabeçario"">Spartacus</p>
+            <div id="DivBotaoMenu" class="DivBotaoMenu" onclick="Menu()">
+                <div id="DivDetalhe_1" class="DivDetalhe_1"></div>
+                <div id="DivDetalhe_2" class="DivDetalhe_2"></div>
+                <div id="DivDetalhe_3" class="DivDetalhe_3"></div>
+            </div>
+            <div id="DivUsuario" class="DivUsuario" style="background-image: url('/imagens/Usuario.png');" onclick="AbreLogin()"></div>
+            <div id="DivMenu" class="DivMenu">
+                <div id="DivMenuCabeçario" class="DivMenuCabeçario">MENU</div>
+                <div id="DivMenuOfertas" class="DivMenuOpçao">Ofertas</div>
+                <div id="DivMenuComprar" class="DivMenuOpçao">Comprar</div>
+                <div id="DivMenuLocar" class="DivMenuOpçao">Locar</div>
+                <div id="DivMenuAjuda" class="DivMenuOpçao">Ajuda</div>
+            </div>
+        </div>
+        
+        <div id="DivLogin" class="DivLogin">
+            <div id="DivFechaLogin" class="DivFechaLogin" onclick="FechaLogin()">
+                <div id="DivDetalheLoginUm" class="DivDetalheLoginUm"></div>
+                <div id="DivDetalheLoginDois" class="DivDetalheLoginDois"></div>
+            </div>
+            <div id="DivLogoLogin" class="DivLogoLogin" style="background-image: url('/imagens/LogoLogin.png');"></div>
+            <p id="DivTituloLogin" class="DivTituloLogin">SPARTACUS ID</p>
+            <p id="ParagrafoRecepçao" class="ParagrafoRecepçao">
+                Bem-vindo à sua área, <strong>Spartacus</strong>!<br><br>
+                
+                • <strong>Avalie</strong> veículos<br>
+                • <strong>Compre</strong> veículos<br>
+                • <strong>Loque</strong> veículos
+            </p>
+            <input type="text" id="InputTextoEmailLogin">
+            <p id="ParagrafoEmail" class="ParagrafoEmail">Email</p>
+            <input type="text" id="InputTextoSenhaLogin">
+            <p id="ParagrafoSenha" class="ParagrafoSenha">Senha</p>
+            <div id="DivBotaoEntrarLogin" class="DivBotaoEntrarLogin">Entrar</div>
+        </div>
+        <div id="DivContato" class="DivContato" onclick="window.open('https://wa.me/5541995224749')">
+            <p id="ParagrafoContato" class="ParagrafoContato">CONTATO</p>
+            <div id="DivLogoWhatsApp" class="DivLogoWhatsApp" style="background-image: url('/imagens/LogoWhatsApp.png');"></div>
+        </div>
+    </div>
+    <script src="/SCRIPTS/script_TelaDetalheCarro.js" defer></script>
+</body>
+</html>
