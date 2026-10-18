@@ -12,8 +12,9 @@ public class carro implements INTERFACE_carro {
     private boolean Disponibilidade_carro;
     private int id_motor;
     private Integer id_desconto_pk;
+    private double nota;
 
-    public carro(int id_carro_pk, String modelo_carro, int ano_carro, String cor_carro, boolean Disponibilidade_carro, int id_motor, Integer id_desconto_pk) {
+    public carro(int id_carro_pk, String modelo_carro, int ano_carro, String cor_carro, boolean Disponibilidade_carro, int id_motor, Integer id_desconto_pk, double nota) {
         this.id_carro_pk = id_carro_pk;
         this.modelo_carro = modelo_carro;
         this.ano_carro = ano_carro;
@@ -21,6 +22,8 @@ public class carro implements INTERFACE_carro {
         this.Disponibilidade_carro = Disponibilidade_carro;
         this.id_motor = id_motor;
         this.id_desconto_pk = id_desconto_pk;
+        this.nota = nota;
+
     }
 
     public int getIdCarro() {
@@ -49,5 +52,9 @@ public class carro implements INTERFACE_carro {
 
     public Integer getIdDesconto() {
         return id_desconto_pk;
+    }
+
+    public double getNota(){
+        return nota;
     }
 }

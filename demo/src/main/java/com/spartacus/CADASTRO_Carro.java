@@ -15,7 +15,8 @@ public class CADASTRO_Carro {
                 "Branco",
                 true,
                 22,
-                null
+                null,
+                0
             );
 
             carroDAO dao = new carroDAO();

@@ -9,4 +9,5 @@ public interface INTERFACE_carro {
     public boolean getDisponibilidade();
     public int getIdMotor();
     public Integer getIdDesconto();
+     public double getNota();
 }

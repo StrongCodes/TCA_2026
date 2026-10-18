@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConexãoBD {
 
     private static final String URL =
-        "jdbc:mysql://localhost:3306/Banco_Spartacus";
+        "jdbc:mysql://localhost:3306/BancoBD";
 
     private static final String USUARIO = "spartacus_app";
     private static final String SENHA = "senha";
