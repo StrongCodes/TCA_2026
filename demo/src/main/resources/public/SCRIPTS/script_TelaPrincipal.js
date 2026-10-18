@@ -198,5 +198,3 @@ function MudaTela(TelaDesejada) {
         Janela.focus();
     }
 }
-    }
-}
