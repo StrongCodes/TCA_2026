@@ -1,0 +1,514 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.DivLogin{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 27%;
+    height: 650px;
+    background-color: rgb(239, 239, 232);
+    position: fixed;
+    top: 0%;
+    z-index: 16;
+}
+
+.DivFechaLogin{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    background-color: black;
+    border-radius: 50%;
+    align-items: center;
+    position: absolute;
+    right: 1.5%;
+    top: 1%;
+}
+
+.DivDetalheLoginUm{
+    display: flex;
+    background-color: rgb(239, 239, 232);
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.DivDetalheLoginDois{
+    display: flex;
+    background-color: rgb(239, 239, 232);
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+.DivLogoLogin{
+    display: flex;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 6%;
+}
+
+.DivTituloLogin{
+    display: flex;
+    font-size: 30px;
+    font-weight: 900;
+    position: absolute;
+    top: 17%;
+}
+
+.ParagrafoRecepçao{
+    font-size: 17px;
+    font-style: italic;
+    position: absolute;
+    top: 30%;
+}
+
+#InputTextoEmailLogin{
+    display: flex;
+    width: 70%;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid gray;
+    position: absolute;
+    top: 60%;
+    padding: 0 15px;
+}
+
+
+@keyframes AnimaçaoDoInputEmailClick{
+    from{
+        top: 59.5%;
+        background-color: white;
+    }    
+    to{
+        top: 56.5%;
+        background-color: rgb(239, 239, 232);
+    }
+}
+
+@keyframes AnimaçaoDoInputEmailSemClick{
+    from{
+        top: 56.5%;
+        background-color: rgb(239, 239, 232);
+    }    
+    to{
+        top: 59.5%;
+        background-color: white;
+    }
+}
+
+.ParagrafoEmail{
+    display: flex;
+    color: gray;
+    position: absolute;
+    top: 59.5%;
+    left: 15%;
+    font-size: 15px;
+    background-color: rgb(239, 239, 232)
+}
+
+#InputTextoSenhaLogin{
+    display: flex;
+    width: 70%;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid gray;
+    position: absolute;
+    top: 68%;
+    padding: 0 15px;
+}
+
+@keyframes AnimaçaoDoInputSenhaClick{
+    from{
+        top: 67.5%;
+        background-color: white;
+    }    
+    to{
+        top: 64.5%;
+        background-color: rgb(239, 239, 232);
+    }
+}
+
+@keyframes AnimaçaoDoInputSenhaSemClick{
+    from{
+        top: 64.5%;
+        background-color: rgb(239, 239, 232);
+    }    
+    to{
+        top: 67.5%;
+        background-color: white;
+    }
+}
+
+.ParagrafoSenha{
+    display: flex;
+    color: gray;
+    position: absolute;
+    top: 67.5%;
+    left: 15%;
+    font-size: 15px;
+    background-color: white;
+}
+
+.DivBotaoEntrarLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(228, 4, 26);
+    
+    color: white;
+    font-weight: bold;
+    font-family: italic;
+    font-size: 20px;
+    
+    width: 160px;
+    height: 45px;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 78%;
+    user-select: none;
+}
+
+.DivBotaoEntrarLogin:hover{
+    transform: scale(1.05);
+}
+
+.DivPrincipal{
+    display: flex;
+    background-color: rgb(239, 239, 232);
+    width: 100%;
+    height: 300vw;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.DivFundo{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 388vw;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    z-index: 12;
+}
+
+.DivCabeçario{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    position: fixed;
+    top: 0%;
+    z-index: 11;
+    user-select: none;
+}
+
+.DivLogoCabeçario{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 1%;
+    user-select: none;
+}
+
+.ParagrafoTituloCabeçario{
+    display: flex;
+    color: white;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    position: absolute;
+    left: 8%;
+    user-select: none;
+}
+
+.DivUsuario{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 6%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes MenuAberto {
+    from{
+        background-color: black;
+    }
+    to{
+        background-color: rgb(239, 239, 232);
+    }
+}
+
+@keyframes MenuFechado {
+    from{
+        background-color: rgb(239, 239, 232);
+    }
+    to{
+        background-color: black;
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe1_Abrir {
+    from {
+        background-color: white;
+        top: 35%;
+        width: 50%;
+        transform: rotate(0deg);
+    }
+
+    to {
+        background-color: black;
+        top: 50%;
+        width: 40%;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe1_Fechar {
+    from {
+        background-color: black;
+        top: 50%;
+        width: 40%;
+        transform: rotate(45deg);
+    }
+
+    to {
+        background-color: white;
+        top: 35%;
+        width: 50%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe2_Abrir {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe2_Fechar {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe3_Abrir {
+    from {
+        background-color: white;
+        top: 35%;
+        width: 50%;
+        transform: rotate(0deg);
+    }
+
+    to {
+        background-color: black;
+        top: 50%;
+        width: 40%;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes AnimacaoMenu_Detalhe3_Fechar {
+    from {
+        background-color: black;
+        top: 50%;
+        width: 40%;
+        transform: rotate(-45deg);
+    }
+
+    to {
+        background-color: white;
+        bottom: 35%;
+        width: 50%;
+        transform: rotate(0deg);
+    }
+}
+
+.DivBotaoMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+
+.DivDetalhe_1{
+    display: flex;
+    background-color: white;
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    top: 35%;
+}
+
+.DivDetalhe_2{
+    display: flex;
+    background-color: white;
+    width: 50%;
+    height: 1px;
+    position: absolute;
+}
+
+.DivDetalhe_3{
+    display: flex;
+    background-color: white;
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    bottom: 35%;
+}
+
+@keyframes ApareceMenu {
+    from{
+        opacity: 0;
+        right: -20%;
+    }
+    to{
+        opacity: 1;
+        right: 0%;
+    }
+}
+
+@keyframes EscondeMenu {
+    from{
+        opacity: 1;
+        right: 0%;
+    }
+    to{
+        opacity: 0;
+        right: -20%;
+    }
+}
+
+.DivMenu{
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 350px;
+    height: 560px;
+    background-color: rgb(239, 239, 232);
+    position: absolute;
+    right: -20%;
+    top: 100%;
+    position: absolute;
+    box-shadow: 5px 5px 10px black;
+    z-index: 3;
+}
+
+.DivMenuCabeçario{
+    display: flex;
+    width: 100%;
+    height: 55px;
+    background-color: rgb(239, 239, 232);;
+    justify-content: left;
+    align-items: center;
+    color: rgb(131, 130, 130);
+    font-weight:lighter;
+    font-size: 15px;
+    border-left: 50px solid rgb(239, 239, 232);
+}
+
+.DivMenuOpçao{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: left;
+    align-items: center;
+    color: rgb(87, 86, 86);
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-left: 40px solid rgb(239, 239, 232);
+}
+
+@keyframes AnimaçaoContato{
+    from{
+        width: 50px;
+        border-radius: 50%
+    }
+    to{
+        width: 210px;
+        border-radius: 70px;
+    }
+}
+
+@keyframes AnimaçaoContatoDois{
+    from{
+        width: 210px;
+        border-radius: 70px;
+    }
+    to{
+        width: 50px;
+        border-radius: 50%
+    }
+}
+
+.DivContato{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:#078408;
+    align-items: center;
+    position: fixed;
+    top: 83%;
+    right: 1%;
+    z-index: 15;
+    border: 5px solid white;
+    box-shadow: 5px 5px 10px black;
+}
+
+.ParagrafoContato{
+    display: none;
+    color: white;
+    font-size: 27px;
+    justify-content: left;
+    font-weight: 900;
+    position: absolute;
+    left: 5%;
+    font-family: italic;
+}
+
+.DivLogoWhatsApp{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -12.5%;
+}
