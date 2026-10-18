@@ -1,1 +1,7 @@
+com/spartacus/dao/descontoDAO.class
+com/spartacus/TesteConexao.class
+com/spartacus/model/desconto.class
+com/spartacus/interfaces/INTERFACE_desconto.class
+com/spartacus/TesteDesconto.class
+com/spartacus/db/ConexãoBD.class
 com/spartacus/App.class

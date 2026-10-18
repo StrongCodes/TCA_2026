@@ -91,3 +91,5 @@ CREATE TABLE parcela (
     id_pagamento_pk INT NOT NULL,
     FOREIGN KEY (id_pagamento_pk) REFERENCES pagamento(id_pagamento_pk) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
+SELECT VERSION();
