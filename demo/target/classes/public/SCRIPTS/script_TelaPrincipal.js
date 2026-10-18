@@ -189,9 +189,14 @@ div.addEventListener("mouseleave", () => {
     document.getElementById("DivLogoWhatsApp").style.transform = "none"
 });
 
-function MudaTela(TelaDesejada){
-    if(TelaDesejada){
-        const Tela = window.open(`/TELAS/${TelaDesejada}.html`, "_blank");
-        Tela.focus();
+function MudaTela(TelaDesejada) {
+    if (!TelaDesejada) return;
+
+    const Janela = window.open(`/TELAS/${TelaDesejada}.html`, "_blank");
+
+    if (Janela) {
+        Janela.focus();
+    }
+}
     }
 }
