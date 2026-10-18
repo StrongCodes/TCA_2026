@@ -17,19 +17,19 @@ public class desconto implements INTERFACE_desconto{
         this.data_final_desconto = data_final_desconto;
     }
 
-    public int getId(){
+    public int getId_Desconto(){
         return id_desconto_pk;
     }
 
-    public BigDecimal getPorcentagem(){
+    public BigDecimal getPorcentagem_Desconto(){
         return porcentagem_desconto;
     }
 
-    public LocalDate getDataInicio(){
+    public LocalDate getDataInicio_Desconto(){
         return data_inicio_desconto;
     }
 
-    public LocalDate getDataFinal(){
+    public LocalDate getDataFinal_Desconto(){
         return data_final_desconto;
     }
 }

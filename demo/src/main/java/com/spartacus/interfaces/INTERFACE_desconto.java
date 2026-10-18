@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.math.BigDecimal;
 
 public interface INTERFACE_desconto {
-    public int getId();
-    public BigDecimal getPorcentagem();
-    public LocalDate getDataInicio();
-    public LocalDate getDataFinal();
+    public int getId_Desconto();
+    public BigDecimal getPorcentagem_Desconto();
+    public LocalDate getDataInicio_Desconto();
+    public LocalDate getDataFinal_Desconto();
 }

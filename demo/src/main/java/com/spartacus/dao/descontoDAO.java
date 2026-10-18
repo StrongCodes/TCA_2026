@@ -10,16 +10,10 @@ import java.sql.Date;
 
 public class descontoDAO {
 
-    // O método de cadastro fica aqui dentro
-    public void cadastrar(desconto desconto)
-            throws SQLException {
+    public void cadastrar(desconto desconto) throws SQLException {
 
         String sql = """
-            INSERT INTO desconto (
-                porcentagem_desconto,
-                data_inicio_desconto,
-                data_final_desconto
-            )
+            INSERT INTO desconto (porcentagem_desconto, data_inicio_desconto, data_final_desconto)
             VALUES (?, ?, ?)
             """;
 
@@ -29,21 +23,21 @@ public class descontoDAO {
                 conexao.prepareStatement(sql)
         ) {
             comando.setBigDecimal(
-                1, desconto.getPorcentagem()
+                1, desconto.getPorcentagem_Desconto()
             );
 
             comando.setDate(
                 2,
-                desconto.getDataInicio() == null
+                desconto.getDataInicio_Desconto() == null
                     ? null
-                    : Date.valueOf(desconto.getDataInicio())
+                    : Date.valueOf(desconto.getDataInicio_Desconto())
             );
 
             comando.setDate(
                 3,
-                desconto.getDataFinal() == null
+                desconto.getDataFinal_Desconto() == null
                     ? null
-                    : Date.valueOf(desconto.getDataFinal())
+                    : Date.valueOf(desconto.getDataFinal_Desconto())
             );
 
             comando.executeUpdate();
