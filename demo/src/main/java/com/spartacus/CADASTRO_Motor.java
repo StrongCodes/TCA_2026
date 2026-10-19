@@ -6,7 +6,7 @@ import com.spartacus.dao.motorDAO;
 
 public class CADASTRO_Motor {
 
-    public static void main(String[] args) {
+    public static void main() {
         try {
             motor novoMotor = new motor(
                 0,

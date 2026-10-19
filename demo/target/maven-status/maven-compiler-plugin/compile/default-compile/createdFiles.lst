@@ -1,8 +1,10 @@
+com/spartacus/dao/reembolsoDAO.class
 com/spartacus/interfaces/INTERFACE_motor.class
 com/spartacus/dao/descontoDAO.class
 com/spartacus/CADASTRO_Cliente.class
 com/spartacus/CADASTRO_Parcela.class
 com/spartacus/dao/pagamentoDAO.class
+com/spartacus/interfaces/INTERFACE_reembolso.class
 com/spartacus/model/desconto.class
 com/spartacus/interfaces/INTERFACE_compra.class
 com/spartacus/interfaces/INTERFACE_locacao.class
@@ -20,10 +22,12 @@ com/spartacus/model/compra.class
 com/spartacus/dao/locacaoDAO.class
 com/spartacus/model/parcela.class
 com/spartacus/dao/parcelaDAO.class
+com/spartacus/model/reembolso.class
 com/spartacus/model/cliente.class
 com/spartacus/interfaces/INTERFACE_parcela.class
 com/spartacus/interfaces/INTERFACE_carro.class
 com/spartacus/interfaces/INTERFACE_desconto.class
+com/spartacus/CADASTRO_reembolso.class
 com/spartacus/db/ConexãoBD.class
 com/spartacus/App.class
 com/spartacus/CADASTRO_Motor.class

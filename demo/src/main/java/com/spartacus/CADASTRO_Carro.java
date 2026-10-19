@@ -6,7 +6,7 @@ import com.spartacus.dao.carroDAO;
 
 public class CADASTRO_Carro {
 
-    public static void main(String[] args) {
+    public static void main() {
         try {
             carro novoCarro = new carro(
                 0,

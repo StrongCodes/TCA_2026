@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 public class CADASTRO_Desconto {
 
-    public static void main(String[] args) {
+    public static void main() {
         try {
             desconto novoDesconto = new desconto(
                 0,
