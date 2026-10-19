@@ -185,6 +185,19 @@ body{
     transform: scale(1.05);
 }
 
+.ParagrafoNãoTenhoUmaConta{
+    display: flex;
+    color: gray;
+    font-weight: 900;
+    position: absolute;
+    bottom: 7%;
+}
+
+.ParagrafoNãoTenhoUmaConta:hover {
+    text-decoration: underline;
+    color: red;
+}
+
 .DivPrincipal{
     display: flex;
     background-color: rgb(239, 239, 232);
