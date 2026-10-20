@@ -30,38 +30,38 @@ public class reembolsoDAO {
             Connection conexao = ConexãoBD.conectar();
             PreparedStatement comando = conexao.prepareStatement(sql)
         ) {
-            comando.setDouble(1, reembolso.getValor());
+            comando.setDouble(1, reembolso.getValor_Reembolso());
 
             comando.setDate(
                 2,
-                java.sql.Date.valueOf(reembolso.getDataSolicitacao())
+                java.sql.Date.valueOf(reembolso.getDataSolicitacao_Reembolso())
             );
 
-            if (reembolso.getDataResolucao() == null) {
+            if (reembolso.getDataResolucao_Reembolso() == null) {
                 comando.setNull(3, Types.DATE);
             } else {
                 comando.setDate(
                     3,
-                    java.sql.Date.valueOf(reembolso.getDataResolucao())
+                    java.sql.Date.valueOf(reembolso.getDataResolucao_Reembolso())
                 );
             }
 
             comando.setTime(
                 4,
-                java.sql.Time.valueOf(reembolso.getHorarioAgendado())
+                java.sql.Time.valueOf(reembolso.getHorarioAgendado_Reembolso())
             );
 
-            if (reembolso.getHorarioColeta() == null) {
+            if (reembolso.getHorarioColeta_Reembolso() == null) {
                 comando.setNull(5, Types.TIME);
             } else {
                 comando.setTime(
                     5,
-                    java.sql.Time.valueOf(reembolso.getHorarioColeta())
+                    java.sql.Time.valueOf(reembolso.getHorarioColeta_Reembolso())
                 );
             }
 
-            comando.setInt(6, reembolso.getIdCliente());
-            comando.setInt(7, reembolso.getIdPagamento());
+            comando.setInt(6, reembolso.getIdCliente_Reembolso());
+            comando.setInt(7, reembolso.getIdPagamento_Reembolso());
 
             comando.executeUpdate();
         }

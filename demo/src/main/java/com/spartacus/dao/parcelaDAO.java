@@ -25,18 +25,18 @@ public class parcelaDAO {
             Connection conexao = ConexãoBD.conectar();
             PreparedStatement comando = conexao.prepareStatement(sql)
         ) {
-            comando.setInt(1, parcela.getNumero());
+            comando.setInt(1, parcela.getNumero_Parcela());
             comando.setDate(
                 2,
-                java.sql.Date.valueOf(parcela.getDataVencimento())
+                java.sql.Date.valueOf(parcela.getDataVencimento_Parcela())
             );
 
-            if (parcela.getStatus() == null)
+            if (parcela.getStatus_Parcela() == null)
                 comando.setNull(3, Types.VARCHAR);
             else
-                comando.setString(3, parcela.getStatus());
+                comando.setString(3, parcela.getStatus_Parcela());
 
-            comando.setInt(4, parcela.getIdPagamento());
+            comando.setInt(4, parcela.getIdPagamento_Parcela());
 
             comando.executeUpdate();
         }

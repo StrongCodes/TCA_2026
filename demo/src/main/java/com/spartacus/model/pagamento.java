@@ -37,12 +37,35 @@ public class pagamento implements INTERFACE_pagamento {
         this.id_locacao_pk = id_locacao_pk;
     }
 
-    public int getIdPagamento() { return id_pagamento_pk; }
-    public String getMetodo() { return MetodoDePagamento_pagamento; }
-    public LocalTime getHorario() { return HorarioDePagamento_pagamento; }
-    public LocalDate getData() { return DataDePagamento_pagamento; }
-    public BigDecimal getValorEntrada() { return ValorDeEntrada_pagamento; }
-    public BigDecimal getValorTotal() { return ValorTotal_pagamento; }
-    public Integer getIdCompra() { return id_compra_pk; }
-    public Integer getIdLocacao() { return id_locacao_pk; }
+    public int getIdPagamento_Pagamento() { 
+        return id_pagamento_pk; 
+    }
+
+    public String getMetodo_Pagamento() { 
+        return MetodoDePagamento_pagamento; 
+    }
+    
+    public LocalTime getHorario_Pagamento() { 
+        return HorarioDePagamento_pagamento; 
+    }
+    
+    public LocalDate getData_Pagamento() { 
+        return DataDePagamento_pagamento; 
+    }
+
+    public BigDecimal getValorEntrada_Pagamento() { 
+        return ValorDeEntrada_pagamento; 
+    }
+
+    public BigDecimal getValorTotal_Pagamento() { 
+        return ValorTotal_pagamento; 
+    }
+
+    public Integer getIdCompra_Pagamento() { 
+        return id_compra_pk; 
+    }
+    
+    public Integer getIdLocacao_Pagamento() { 
+        return id_locacao_pk; 
+    }
 }

@@ -17,7 +17,7 @@ public class desconto implements INTERFACE_desconto{
         this.data_final_desconto = data_final_desconto;
     }
 
-    public int getId_Desconto(){
+    public int getIdDesconto_Desconto(){
         return id_desconto_pk;
     }
 

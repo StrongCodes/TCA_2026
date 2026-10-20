@@ -28,17 +28,17 @@ public class clienteDAO {
             PreparedStatement comando =
                 conexao.prepareStatement(sql)
         ) {
-            comando.setString(1, cliente.getNome());
-            comando.setString(2, cliente.getSenha());
-            comando.setString(3, cliente.getEmail());
+            comando.setString(1, cliente.getNome_Cliente());
+            comando.setString(2, cliente.getSenha_Cliente());
+            comando.setString(3, cliente.getEmail_Cliente());
 
-            if (cliente.getTelefone() == null) {
+            if (cliente.getTelefone_Cliente() == null) {
                 comando.setNull(4, java.sql.Types.VARCHAR);
             } else {
-                comando.setString(4, cliente.getTelefone());
+                comando.setString(4, cliente.getTelefone_Cliente());
             }
 
-            comando.setString(5, cliente.getCEP());
+            comando.setString(5, cliente.getCEP_Cliente());
 
             comando.executeUpdate();
         }

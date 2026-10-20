@@ -29,16 +29,16 @@ public class carroDAO {
             PreparedStatement comando =
                 conexao.prepareStatement(sql)
         ) {
-            comando.setString(1, carro.getModelo());
-            comando.setInt(2, carro.getAno());
-            comando.setString(3, carro.getCor());
-            comando.setBoolean(4, carro.getDisponibilidade());
-            comando.setInt(5, carro.getIdMotor());
+            comando.setString(1, carro.getModelo_Carro());
+            comando.setInt(2, carro.getAno_Carro());
+            comando.setString(3, carro.getCor_Carro());
+            comando.setBoolean(4, carro.getDisponibilidade_Carro());
+            comando.setInt(5, carro.getIdMotor_Carro());
 
-            if (carro.getIdDesconto() == null) {
+            if (carro.getIdDesconto_Carro() == null) {
                 comando.setNull(6, java.sql.Types.INTEGER);
             } else {
-                comando.setInt(6, carro.getIdDesconto());
+                comando.setInt(6, carro.getIdDesconto_Carro());
             }
 
             comando.executeUpdate();

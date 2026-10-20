@@ -26,9 +26,23 @@ public class parcela implements INTERFACE_parcela {
         this.id_pagamento_pk = id_pagamento_pk;
     }
 
-    public int getIdParcela() { return id_parcela; }
-    public int getNumero() { return Numero_parcela; }
-    public LocalDate getDataVencimento() { return DataVencimento_parcela; }
-    public String getStatus() { return Status_parcela; }
-    public int getIdPagamento() { return id_pagamento_pk; }
+    public int getIdParcela_Parcela() { 
+        return id_parcela; 
+    }
+    
+    public int getNumero_Parcela() { 
+        return Numero_parcela; 
+    }
+    
+    public LocalDate getDataVencimento_Parcela() { 
+        return DataVencimento_parcela; 
+    }
+    
+    public String getStatus_Parcela() { 
+        return Status_parcela; 
+    }
+    
+    public int getIdPagamento_Parcela() { 
+        return id_pagamento_pk; 
+    }
 }

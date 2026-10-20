@@ -33,11 +33,31 @@ public class compra implements INTERFACE_compra {
         this.id_carro_pk = id_carro_pk;
     }
 
-    public int getIdCompra() { return id_compra_pk; }
-    public LocalDate getDataAgendada() { return DataAgendadaParaColeta_compra; }
-    public LocalDate getDataColeta() { return DataDeColeta_compra; }
-    public LocalTime getHorarioAgendado() { return HorarioAgendadoParaColeta_compra; }
-    public LocalTime getHorarioColeta() { return HorarioDeColeta_compra; }
-    public int getIdCliente() { return id_cliente_pk; }
-    public int getIdCarro() { return id_carro_pk; }
+    public int getIdCompra_Compra() { 
+        return id_compra_pk; 
+    }
+
+    public LocalDate getDataAgendada_Compra() { 
+        return DataAgendadaParaColeta_compra;
+    }
+    
+    public LocalDate getDataColeta_Compra() { 
+        return DataDeColeta_compra; 
+    }
+    
+    public LocalTime getHorarioAgendado_Compra() { 
+        return HorarioAgendadoParaColeta_compra; 
+    }
+    
+    public LocalTime getHorarioColeta_Compra() { 
+        return HorarioDeColeta_compra; 
+    }
+    
+    public int getIdCliente_Compra() { 
+        return id_cliente_pk; 
+    }
+    
+    public int getIdCarro_Compra() { 
+        return id_carro_pk; 
+    }
 }

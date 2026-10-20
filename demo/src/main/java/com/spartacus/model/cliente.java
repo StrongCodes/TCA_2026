@@ -28,27 +28,27 @@ public class cliente implements INTERFACE_cliente {
         this.CEP = CEP;
     }
 
-    public int getIdCliente() {
+    public int getIdCliente_Cliente() {
         return id_cliente_pk;
     }
 
-    public String getNome() {
+    public String getNome_Cliente() {
         return nome_cliente;
     }
 
-    public String getSenha() {
+    public String getSenha_Cliente() {
         return senha_cliente;
     }
 
-    public String getEmail() {
+    public String getEmail_Cliente() {
         return email_cliente;
     }
 
-    public String getTelefone() {
+    public String getTelefone_Cliente() {
         return telefone_cliente;
     }
 
-    public String getCEP() {
+    public String getCEP_Cliente() {
         return CEP;
     }
 }

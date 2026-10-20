@@ -28,33 +28,33 @@ public class locacaoDAO {
             Connection conexao = ConexãoBD.conectar();
             PreparedStatement comando = conexao.prepareStatement(sql)
         ) {
-            if (locacao.getDataAgendada() == null)
+            if (locacao.getDataAgendada_Locacao() == null)
                 comando.setNull(1, Types.DATE);
             else
-                comando.setDate(1, java.sql.Date.valueOf(locacao.getDataAgendada()));
+                comando.setDate(1, java.sql.Date.valueOf(locacao.getDataAgendada_Locacao()));
 
-            if (locacao.getHorarioAgendado() == null)
+            if (locacao.getHorarioAgendado_Locacao() == null)
                 comando.setNull(2, Types.TIME);
             else
-                comando.setTime(2, java.sql.Time.valueOf(locacao.getHorarioAgendado()));
+                comando.setTime(2, java.sql.Time.valueOf(locacao.getHorarioAgendado_Locacao()));
 
-            if (locacao.getHorarioColeta() == null)
+            if (locacao.getHorarioColeta_Locacao() == null)
                 comando.setNull(3, Types.TIME);
             else
-                comando.setTime(3, java.sql.Time.valueOf(locacao.getHorarioColeta()));
+                comando.setTime(3, java.sql.Time.valueOf(locacao.getHorarioColeta_Locacao()));
 
-            if (locacao.getDataColeta() == null)
+            if (locacao.getDataColeta_Locacao() == null)
                 comando.setNull(4, Types.DATE);
             else
-                comando.setDate(4, java.sql.Date.valueOf(locacao.getDataColeta()));
+                comando.setDate(4, java.sql.Date.valueOf(locacao.getDataColeta_Locacao()));
 
-            if (locacao.getPeriodo() == null)
+            if (locacao.getPeriodo_Locacao() == null)
                 comando.setNull(5, Types.VARCHAR);
             else
-                comando.setString(5, locacao.getPeriodo());
+                comando.setString(5, locacao.getPeriodo_Locacao());
 
-            comando.setInt(6, locacao.getIdCliente());
-            comando.setInt(7, locacao.getIdCarro());
+            comando.setInt(6, locacao.getIdCliente_Locacao());
+            comando.setInt(7, locacao.getIdCarro_Locacao());
 
             comando.executeUpdate();
         }

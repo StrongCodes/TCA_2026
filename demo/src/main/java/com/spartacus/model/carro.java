@@ -26,35 +26,35 @@ public class carro implements INTERFACE_carro {
 
     }
 
-    public int getIdCarro() {
+    public int getIdCarro_Carro() {
         return id_carro_pk;
     }
 
-    public String getModelo() {
+    public String getModelo_Carro() {
         return modelo_carro;
     }
 
-    public int getAno() {
+    public int getAno_Carro() {
         return ano_carro;
     }
 
-    public String getCor() {
+    public String getCor_Carro() {
         return cor_carro;
     }
 
-    public boolean getDisponibilidade() {
+    public boolean getDisponibilidade_Carro() {
         return Disponibilidade_carro;
     }
 
-    public int getIdMotor() {
+    public int getIdMotor_Carro() {
         return id_motor;
     }
 
-    public Integer getIdDesconto() {
+    public Integer getIdDesconto_Carro() {
         return id_desconto_pk;
     }
 
-    public double getNota(){
+    public double getNota_Carro(){
         return nota;
     }
 }

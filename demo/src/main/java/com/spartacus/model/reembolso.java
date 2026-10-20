@@ -30,42 +30,41 @@ public class reembolso implements INTERFACE_reembolso {
         this.valor_reembolso = valor_reembolso;
         this.dataSol_reembolso = dataSol_reembolso;
         this.dataRes_reembolso = dataRes_reembolso;
-        this.horarioAgendadoParaColeta_reembolso =
-                horarioAgendadoParaColeta_reembolso;
+        this.horarioAgendadoParaColeta_reembolso = horarioAgendadoParaColeta_reembolso;
         this.horarioDeColeta_reembolso = horarioDeColeta_reembolso;
         this.cliente_id_cliente_fk = cliente_id_cliente_fk;
         this.pagamento_id_pagamento_pk = pagamento_id_pagamento_pk;
     }
 
-    public int getIdReembolso() {
+    public int getIdReembolso_Reembolso() {
         return id_reembolso_pk;
     }
 
-    public double getValor() {
+    public double getValor_Reembolso() {
         return valor_reembolso;
     }
 
-    public LocalDate getDataSolicitacao() {
+    public LocalDate getDataSolicitacao_Reembolso() {
         return dataSol_reembolso;
     }
 
-    public LocalDate getDataResolucao() {
+    public LocalDate getDataResolucao_Reembolso() {
         return dataRes_reembolso;
     }
 
-    public LocalTime getHorarioAgendado() {
+    public LocalTime getHorarioAgendado_Reembolso() {
         return horarioAgendadoParaColeta_reembolso;
     }
 
-    public LocalTime getHorarioColeta() {
+    public LocalTime getHorarioColeta_Reembolso() {
         return horarioDeColeta_reembolso;
     }
 
-    public int getIdCliente() {
+    public int getIdCliente_Reembolso() {
         return cliente_id_cliente_fk;
     }
 
-    public int getIdPagamento() {
+    public int getIdPagamento_Reembolso() {
         return pagamento_id_pagamento_pk;
     }
 }

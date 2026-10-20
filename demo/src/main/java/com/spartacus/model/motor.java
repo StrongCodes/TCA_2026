@@ -15,7 +15,7 @@ public class motor implements INTERFACE_motor{
         this.NumDeCilindros_motor = NumDeCilindros_motor;
     }
 
-    public int getId_Motor(){
+    public int getIdMotor_Motor(){
         return id_motor_pk;
     }
 

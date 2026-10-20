@@ -36,12 +36,35 @@ public class locacao implements INTERFACE_locacao {
         this.id_carro_pk = id_carro_pk;
     }
 
-    public int getIdLocacao() { return id_locacao_pk; }
-    public LocalDate getDataAgendada() { return DataAgendadaParaColeta_locacao; }
-    public LocalTime getHorarioAgendado() { return HorarioAgendadoParaColeta_locacao; }
-    public LocalTime getHorarioColeta() { return HorarioDeColeta_locacao; }
-    public LocalDate getDataColeta() { return DataDeColeta_locacao; }
-    public String getPeriodo() { return Periodo_locacao; }
-    public int getIdCliente() { return id_cliente_pk; }
-    public int getIdCarro() { return id_carro_pk; }
+    public int getIdLocacao_Locacao() { 
+        return id_locacao_pk; 
+    }
+    
+    public LocalDate getDataAgendada_Locacao() { 
+        return DataAgendadaParaColeta_locacao; 
+    }
+
+    public LocalTime getHorarioAgendado_Locacao() { 
+        return HorarioAgendadoParaColeta_locacao; 
+    }
+
+    public LocalTime getHorarioColeta_Locacao() { 
+        return HorarioDeColeta_locacao; 
+    }
+
+    public LocalDate getDataColeta_Locacao() { 
+        return DataDeColeta_locacao; 
+    }
+    
+    public String getPeriodo_Locacao() { 
+        return Periodo_locacao; 
+    }
+
+    public int getIdCliente_Locacao() { 
+        return id_cliente_pk; 
+    }
+
+    public int getIdCarro_Locacao() { 
+        return id_carro_pk; 
+    }
 }
