@@ -120,12 +120,36 @@ function VoltaTopo(){
 function AbreLogin(){
     document.getElementById("DivFundo").style.display = "flex"
     document.getElementById("DivLogin").style.display = "flex";
+    document.getElementById("DivFundo").style.backdropFilter = "blur(5px)";
+    document.body.style.overflowY = "hidden";
 }
 
 function FechaLogin(){
     document.getElementById("DivFundo").style.display = "none"
     document.getElementById("DivLogin").style.display = "none";
+    document.getElementById("DivFundo").style.backdropFilter = "none";
+    document.body.style.overflowY = "auto";
 }
+
+let sinalNome = 0;
+
+document.getElementById("InputTextoNomeLogin").addEventListener("focus", function() {
+
+    document.getElementById("ParagrafoNome").style.animation =
+        "AnimaçaoDoInputNomeClick 0.1s linear forwards";
+
+    sinalNome = 1;
+});
+
+document.getElementById("InputTextoNomeLogin").addEventListener("blur", function() {
+
+    if (sinalNome)
+    {
+        document.getElementById("ParagrafoNome").style.animation =
+            "AnimaçaoDoInputNomeSemClick 0.1s linear forwards";
+    }
+
+});
 
 
 let sinalEmail = 0;
@@ -136,6 +160,15 @@ document.getElementById("InputTextoEmailLogin").addEventListener("focus", functi
         "AnimaçaoDoInputEmailClick 0.1s linear forwards";
     sinalEmail = 1;
 
+});
+
+document.getElementById("InputTextoEmailLogin").addEventListener("blur", function() {
+
+    if(sinalEmail)
+    {
+        document.getElementById("ParagrafoEmail").style.animation =
+        "AnimaçaoDoInputEmailSemClick 0.1s linear forwards";
+    }
 });
 
 
@@ -149,18 +182,6 @@ document.getElementById("InputTextoSenhaLogin").addEventListener("focus", functi
     sinalSenha = 1
 });
 
-
-document.getElementById("InputTextoEmailLogin").addEventListener("blur", function() {
-
-    if(sinalEmail)
-    {
-        document.getElementById("ParagrafoEmail").style.animation =
-        "AnimaçaoDoInputEmailSemClick 0.1s linear forwards";
-    }
-});
-
-
-
 document.getElementById("InputTextoSenhaLogin").addEventListener("blur", function() {
 
     if(sinalSenha)
@@ -168,6 +189,108 @@ document.getElementById("InputTextoSenhaLogin").addEventListener("blur", functio
         document.getElementById("ParagrafoSenha").style.animation =
             "AnimaçaoDoInputSenhaSemClick 0.1s linear forwards";
     }
+
+});
+
+let sinalCpf = 0;
+
+document.getElementById("InputTextoCpfLogin").addEventListener("focus", function() {
+
+    document.getElementById("ParagrafoCpf").style.animation =
+        "AnimaçaoDoInputCpfClick 0.1s linear forwards";
+
+    sinalCpf = 1;
+});
+
+document.getElementById("InputTextoCpfLogin").addEventListener("blur", function() {
+
+    if (sinalCpf)
+    {
+        document.getElementById("ParagrafoCpf").style.animation =
+            "AnimaçaoDoInputCpfSemClick 0.1s linear forwards";
+    }
+
+});
+
+let inputNome = document.getElementById("InputTextoNomeLogin");
+
+let placeholderNomeOriginal = inputNome.placeholder;
+
+
+inputNome.addEventListener("focus", function(){
+
+    setTimeout(() =>{
+        this.placeholder = "Seu nome completo";
+    }, 50)
+
+});
+
+
+inputNome.addEventListener("blur", function(){
+
+    this.placeholder = placeholderNomeOriginal;
+
+});
+
+
+
+let input = document.getElementById("InputTextoEmailLogin");
+
+let placeholderOriginal = input.placeholder;
+
+input.addEventListener("focus", function(){
+
+    setTimeout(() =>{
+        this.placeholder = "seu@email.com";
+    }, 50)
+});
+
+
+input.addEventListener("blur", function(){
+    this.placeholder = placeholderOriginal;
+});
+
+
+
+let inputSenha = document.getElementById("InputTextoSenhaLogin");
+
+let placeholderSenhaOriginal = inputSenha.placeholder;
+
+
+inputSenha.addEventListener("focus", function(){
+
+    setTimeout(() =>{
+        this.placeholder = "Sua senha";
+    }, 50)
+
+});
+
+
+inputSenha.addEventListener("blur", function(){
+
+    this.placeholder = placeholderSenhaOriginal;
+
+});
+
+
+
+let inputCpf = document.getElementById("InputTextoCpfLogin");
+
+let placeholderCpfOriginal = inputCpf.placeholder;
+
+
+inputCpf.addEventListener("focus", function(){
+
+    setTimeout(() =>{
+        this.placeholder = "000.000.000-00";
+    }, 50)
+
+});
+
+
+inputCpf.addEventListener("blur", function(){
+
+    this.placeholder = placeholderCpfOriginal;
 
 });
 

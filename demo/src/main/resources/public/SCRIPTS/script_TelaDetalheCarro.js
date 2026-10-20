@@ -35,15 +35,46 @@ function Menu(){
     }
 }
 
+function VoltaTopo(){
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
 function AbreLogin(){
     document.getElementById("DivFundo").style.display = "flex"
     document.getElementById("DivLogin").style.display = "flex";
+    document.getElementById("DivFundo").style.backdropFilter = "blur(5px)";
+    document.body.style.overflowY = "hidden";
 }
 
 function FechaLogin(){
     document.getElementById("DivFundo").style.display = "none"
     document.getElementById("DivLogin").style.display = "none";
+    document.getElementById("DivFundo").style.backdropFilter = "none";
+    document.body.style.overflowY = "auto";
 }
+
+let sinalNome = 0;
+
+document.getElementById("InputTextoNomeLogin").addEventListener("focus", function() {
+
+    document.getElementById("ParagrafoNome").style.animation =
+        "AnimaçaoDoInputNomeClick 0.1s linear forwards";
+
+    sinalNome = 1;
+});
+
+document.getElementById("InputTextoNomeLogin").addEventListener("blur", function() {
+
+    if (sinalNome)
+    {
+        document.getElementById("ParagrafoNome").style.animation =
+            "AnimaçaoDoInputNomeSemClick 0.1s linear forwards";
+    }
+
+});
 
 
 let sinalEmail = 0;
@@ -54,6 +85,15 @@ document.getElementById("InputTextoEmailLogin").addEventListener("focus", functi
         "AnimaçaoDoInputEmailClick 0.1s linear forwards";
     sinalEmail = 1;
 
+});
+
+document.getElementById("InputTextoEmailLogin").addEventListener("blur", function() {
+
+    if(sinalEmail)
+    {
+        document.getElementById("ParagrafoEmail").style.animation =
+        "AnimaçaoDoInputEmailSemClick 0.1s linear forwards";
+    }
 });
 
 
@@ -67,24 +107,32 @@ document.getElementById("InputTextoSenhaLogin").addEventListener("focus", functi
     sinalSenha = 1
 });
 
-
-document.getElementById("InputTextoEmailLogin").addEventListener("blur", function() {
-
-    if(sinalEmail)
-    {
-        document.getElementById("ParagrafoEmail").style.animation =
-        "AnimaçaoDoInputEmailSemClick 0.1s linear forwards";
-    }
-});
-
-
-
 document.getElementById("InputTextoSenhaLogin").addEventListener("blur", function() {
 
     if(sinalSenha)
     {
         document.getElementById("ParagrafoSenha").style.animation =
             "AnimaçaoDoInputSenhaSemClick 0.1s linear forwards";
+    }
+
+});
+
+let sinalCpf = 0;
+
+document.getElementById("InputTextoCpfLogin").addEventListener("focus", function() {
+
+    document.getElementById("ParagrafoCpf").style.animation =
+        "AnimaçaoDoInputCpfClick 0.1s linear forwards";
+
+    sinalCpf = 1;
+});
+
+document.getElementById("InputTextoCpfLogin").addEventListener("blur", function() {
+
+    if (sinalCpf)
+    {
+        document.getElementById("ParagrafoCpf").style.animation =
+            "AnimaçaoDoInputCpfSemClick 0.1s linear forwards";
     }
 
 });
@@ -106,3 +154,13 @@ div.addEventListener("mouseleave", () => {
     document.getElementById("DivLogoWhatsApp").style.right = "-12.5%"
     document.getElementById("DivLogoWhatsApp").style.transform = "none"
 });
+
+function MudaTela(TelaDesejada) {
+    if (!TelaDesejada) return;
+
+    const Janela = window.open(`/TELAS/${TelaDesejada}.html`, "_blank");
+
+    if (Janela) {
+        Janela.focus();
+    }
+}

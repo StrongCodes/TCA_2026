@@ -38,14 +38,45 @@
             <p id="ParagrafoRecepçao" class="ParagrafoRecepçao">
                 Bem-vindo à sua área, <strong>Spartacus</strong>!<br><br>
                 
-                • <strong>Avalie</strong> veículos<br>
-                • <strong>Compre</strong> veículos<br>
-                • <strong>Loque</strong> veículos
+                • <strong>Avaliar</strong> veículos<br>
+                • <strong>Comprar</strong> veículos<br>
+                • <strong>Locar</strong> veículos
             </p>
-            <input type="text" id="InputTextoEmailLogin">
-            <p id="ParagrafoEmail" class="ParagrafoEmail">Email</p>
-            <input type="text" id="InputTextoSenhaLogin">
-            <p id="ParagrafoSenha" class="ParagrafoSenha">Senha</p>
+            <div id="DivInputs" class="DivInputs">
+                <div id="DivNome" class="DivNome">
+                    <input 
+                        type="text" 
+                        id="InputTextoNomeLogin" 
+                        autocomplete="name"
+                    >
+                    <p id="ParagrafoNome" class="ParagrafoNome">Nome</p>
+                </div>
+                <div id="DivEmail" class="DivEmail">
+                    <input 
+                        type="email" 
+                        id="InputTextoEmailLogin"
+                        autocomplete="email"
+                    >
+                    <p id="ParagrafoEmail" class="ParagrafoEmail">Email</p>
+                </div>
+                <div id="DivSenha" class="DivSenha">
+                    <input 
+                        type="password" 
+                        id="InputTextoSenhaLogin"
+                        autocomplete="new-password"
+                    >
+                    <p id="ParagrafoSenha" class="ParagrafoSenha">Senha</p>
+                </div>
+                <div id="DivCpf" class="DivCpf">
+                    <input 
+                        type="text" 
+                        id="InputTextoCpfLogin"
+                        name="cpf"
+                        autocomplete="off"
+                    >
+                    <p id="ParagrafoCpf" class="ParagrafoCpf">CPF</p>
+                </div>
+            </div>
             <div id="DivBotaoEntrarLogin" class="DivBotaoEntrarLogin">Entrar</div>
             <p id="ParagrafoNãoTenhoUmaConta" class="ParagrafoNãoTenhoUmaConta" onclick="MudaTela('TelaCadastro')">
                 Não tem uma conta? Cadastre-se!

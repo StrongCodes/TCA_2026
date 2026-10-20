@@ -42,11 +42,28 @@
                 • <strong>Compre</strong> veículos<br>
                 • <strong>Loque</strong> veículos
             </p>
-            <input type="text" id="InputTextoEmailLogin">
-            <p id="ParagrafoEmail" class="ParagrafoEmail">Email</p>
-            <input type="text" id="InputTextoSenhaLogin">
-            <p id="ParagrafoSenha" class="ParagrafoSenha">Senha</p>
+            <div id="DivInputs" class="DivInputs">
+                <div id="DivNome" class="DivNome">
+                    <input type="text" id="InputTextoNomeLogin">
+                    <p id="ParagrafoNome" class="ParagrafoNome">Nome</p>
+                </div>
+                <div id="DivEmail" class="DivEmail">
+                    <input type="text" id="InputTextoEmailLogin">
+                    <p id="ParagrafoEmail" class="ParagrafoEmail">Email</p>
+                </div>
+                <div id="DivSenha" class="DivSenha">
+                    <input type="text" id="InputTextoSenhaLogin">
+                    <p id="ParagrafoSenha" class="ParagrafoSenha">Senha</p>
+                </div>
+                <div id="DivCpf" class="DivCpf">
+                    <input type="text" id="InputTextoCpfLogin">
+                    <p id="ParagrafoCpf" class="ParagrafoCpf">CPF</p>
+                </div>
+            </div>
             <div id="DivBotaoEntrarLogin" class="DivBotaoEntrarLogin">Entrar</div>
+            <p id="ParagrafoNãoTenhoUmaConta" class="ParagrafoNãoTenhoUmaConta" onclick="MudaTela('TelaCadastro')">
+                Não tem uma conta? Cadastre-se!
+            </p>
         </div>
         <div id="DivContato" class="DivContato" onclick="window.open('https://wa.me/5541995224749')">
             <p id="ParagrafoContato" class="ParagrafoContato">CONTATO</p>
