@@ -48,10 +48,10 @@ let posicaoEsteira = 0;
 function CategoriaAnterior(){
     let aux = CategoriaAtual - 1;
 
-    if(aux >= 0)
-    {
-        SelecionouCategoria(aux);
+    if(aux >= 0){SelecionouCategoria(aux);}
 
+    if(aux > 0)
+    {
         posicaoEsteira += 1335;
 
         document.getElementById("DivEsteira").style.transform =
@@ -66,7 +66,7 @@ function CategoriaSeguinte(){
     {
         SelecionouCategoria(aux);
 
-        posicaoEsteira -= 1335;
+        if(aux > 1){posicaoEsteira -= 1335;}
 
         document.getElementById("DivEsteira").style.transform =
             `translateX(${posicaoEsteira}px)`;
@@ -319,5 +319,54 @@ function MudaTela(TelaDesejada) {
 
     if (Janela) {
         Janela.focus();
+    }
+}
+
+
+async function ConsultarCarroPorID(ID, AtributoDesejado) {
+
+    const resposta = await fetch(
+        `/api/ConsultarCarroPorID/${ID}/${AtributoDesejado}`
+    );
+
+    if (!resposta.ok) {
+        throw new Error("Erro ao consultar carro");
+    }
+
+    const Resultado = await resposta.text();
+
+    return Resultado;
+}
+
+
+async function AtualizaCarros_Categorias(i) {
+
+    let modelo = await ConsultarCarroPorID(i, "modelo_carro");
+            
+    let Paragrafo = document.getElementById(`ParagrafoCarro${i}`)
+
+    document.getElementById(`DivCarro_${i}`).style.backgroundImage = `url('/imagens/${modelo}/Preto.png')`;
+
+    if (Paragrafo) {
+        Paragrafo.innerText = modelo;
+    }
+}
+
+
+for (let i = 1; i <= 21; i++) {
+
+    const Div = document.getElementById(`DivCarro_${i}`);
+
+    if (Div) {
+
+        const Observador = new IntersectionObserver((entradas) => {
+
+            if (entradas[0].isIntersecting) {
+                AtualizaCarros_Categorias(i);
+            }
+
+        });
+
+        Observador.observe(Div);
     }
 }
