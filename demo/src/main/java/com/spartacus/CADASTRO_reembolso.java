@@ -1,4 +1,3 @@
-
 package com.spartacus;
 
 import com.spartacus.model.reembolso;
@@ -9,25 +8,26 @@ import java.time.LocalTime;
 public class CADASTRO_reembolso {
 
     public static void ColetaDados_Reembolso(
-        Integer id_reembolso_pk,
-        double valor_reembolso,
-        LocalDate dataSol_reembolso,
-        LocalDate dataRes_reembolso,
-        LocalTime horarioAgendadoParaColeta_reembolso,
-        LocalTime horarioDeColeta_reembolso,
-        int id_cliente_pk,
-        int id_pagamento_pk
+        int id_Reembolso_pk,
+        double valor_Reembolso,
+        LocalDate DataSoli_Reembolso,
+        LocalTime HoraSoli_Reembolso,
+        LocalDate Data_Reembolso,
+        LocalTime Hora_Reembolso,
+        Integer compra_id_compra_pk,
+        Integer locacao_id_locacao_pk
     ) {
         try {
+
             reembolso novoReembolso = new reembolso(
-                id_reembolso_pk,
-                valor_reembolso,
-                dataSol_reembolso,
-                dataRes_reembolso,
-                horarioAgendadoParaColeta_reembolso,
-                horarioDeColeta_reembolso,
-                id_cliente_pk,
-                id_pagamento_pk
+                id_Reembolso_pk,
+                valor_Reembolso,
+                DataSoli_Reembolso,
+                HoraSoli_Reembolso,
+                Data_Reembolso,
+                Hora_Reembolso,
+                compra_id_compra_pk,
+                locacao_id_locacao_pk
             );
 
             reembolsoDAO dao = new reembolsoDAO();

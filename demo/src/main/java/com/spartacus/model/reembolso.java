@@ -1,4 +1,3 @@
-
 package com.spartacus.model;
 
 import com.spartacus.interfaces.INTERFACE_reembolso;
@@ -7,64 +6,65 @@ import java.time.LocalTime;
 
 public class reembolso implements INTERFACE_reembolso {
 
-    private int id_reembolso_pk;
-    private double valor_reembolso;
-    private LocalDate dataSol_reembolso;
-    private LocalDate dataRes_reembolso;
-    private LocalTime horarioAgendadoParaColeta_reembolso;
-    private LocalTime horarioDeColeta_reembolso;
-    private int cliente_id_cliente_fk;
-    private int pagamento_id_pagamento_pk;
+    private int id_Reembolso_pk;
+    private double valor_Reembolso;
+    private LocalDate DataSoli_Reembolso;
+    private LocalTime HoraSoli_Reembolso;
+    private LocalDate Data_Reembolso;
+    private LocalTime Hora_Reembolso;
+    private Integer compra_id_compra_pk;
+    private Integer locacao_id_locacao_pk;
 
     public reembolso(
-            int id_reembolso_pk,
-            double valor_reembolso,
-            LocalDate dataSol_reembolso,
-            LocalDate dataRes_reembolso,
-            LocalTime horarioAgendadoParaColeta_reembolso,
-            LocalTime horarioDeColeta_reembolso,
-            int cliente_id_cliente_fk,
-            int pagamento_id_pagamento_pk) {
+        int id_Reembolso_pk,
+        double valor_Reembolso,
+        LocalDate DataSoli_Reembolso,
+        LocalTime HoraSoli_Reembolso,
+        LocalDate Data_Reembolso,
+        LocalTime Hora_Reembolso,
+        Integer compra_id_compra_pk,
+        Integer locacao_id_locacao_pk
+    ) {
 
-        this.id_reembolso_pk = id_reembolso_pk;
-        this.valor_reembolso = valor_reembolso;
-        this.dataSol_reembolso = dataSol_reembolso;
-        this.dataRes_reembolso = dataRes_reembolso;
-        this.horarioAgendadoParaColeta_reembolso = horarioAgendadoParaColeta_reembolso;
-        this.horarioDeColeta_reembolso = horarioDeColeta_reembolso;
-        this.cliente_id_cliente_fk = cliente_id_cliente_fk;
-        this.pagamento_id_pagamento_pk = pagamento_id_pagamento_pk;
+        this.id_Reembolso_pk = id_Reembolso_pk;
+        this.valor_Reembolso = valor_Reembolso;
+        this.DataSoli_Reembolso = DataSoli_Reembolso;
+        this.HoraSoli_Reembolso = HoraSoli_Reembolso;
+        this.Data_Reembolso = Data_Reembolso;
+        this.Hora_Reembolso = Hora_Reembolso;
+        this.compra_id_compra_pk = compra_id_compra_pk;
+        this.locacao_id_locacao_pk = locacao_id_locacao_pk;
     }
 
-    public int getIdReembolso_Reembolso() {
-        return id_reembolso_pk;
+    public int getId_Reembolso_pk() {
+        return id_Reembolso_pk;
     }
 
     public double getValor_Reembolso() {
-        return valor_reembolso;
+        return valor_Reembolso;
     }
 
-    public LocalDate getDataSolicitacao_Reembolso() {
-        return dataSol_reembolso;
+    public LocalDate getDataSoli_Reembolso() {
+        return DataSoli_Reembolso;
     }
 
-    public LocalDate getDataResolucao_Reembolso() {
-        return dataRes_reembolso;
+    public LocalTime getHoraSoli_Reembolso() {
+        return HoraSoli_Reembolso;
     }
 
-    public LocalTime getHorarioAgendado_Reembolso() {
-        return horarioAgendadoParaColeta_reembolso;
+    public LocalDate getData_Reembolso() {
+        return Data_Reembolso;
     }
 
-    public LocalTime getHorarioColeta_Reembolso() {
-        return horarioDeColeta_reembolso;
+    public LocalTime getHora_Reembolso() {
+        return Hora_Reembolso;
     }
 
-    public int getIdCliente_Reembolso() {
-        return cliente_id_cliente_fk;
+    public Integer getCompra_id_compra_pk() {
+        return compra_id_compra_pk;
     }
 
-    public int getIdPagamento_Reembolso() {
-        return pagamento_id_pagamento_pk;
+    public Integer getLocacao_id_locacao_pk() {
+        return locacao_id_locacao_pk;
     }
 }

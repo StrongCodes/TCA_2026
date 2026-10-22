@@ -1,4 +1,3 @@
-
 package com.spartacus.dao;
 
 import com.spartacus.db.ConexãoBD;
@@ -14,14 +13,14 @@ public class reembolsoDAO {
     public void cadastrar(reembolso reembolso) throws SQLException {
 
         String sql = """
-            INSERT INTO reembolso (
-                valor_reembolso,
-                dataSol_reembolso,
-                dataRes_reembolso,
-                horarioAgendadoParaColeta_reembolso,
-                horarioDeColeta_reembolso,
-                cliente_id_cliente_fk,
-                pagamento_id_pagamento_pk
+            INSERT INTO Reembolso (
+                valor_Reembolso,
+                DataSoli_Reembolso,
+                HoraSoli_Reembolso,
+                Data_Reembolso,
+                Hora_Reembolso,
+                compra_id_compra_pk,
+                locacao_id_locacao_pk
             )
             VALUES (?, ?, ?, ?, ?, ?, ?)
             """;
@@ -30,38 +29,65 @@ public class reembolsoDAO {
             Connection conexao = ConexãoBD.conectar();
             PreparedStatement comando = conexao.prepareStatement(sql)
         ) {
-            comando.setDouble(1, reembolso.getValor_Reembolso());
+
+            comando.setDouble(
+                1,
+                reembolso.getValor_Reembolso()
+            );
 
             comando.setDate(
                 2,
-                java.sql.Date.valueOf(reembolso.getDataSolicitacao_Reembolso())
+                java.sql.Date.valueOf(
+                    reembolso.getDataSoli_Reembolso()
+                )
             );
 
-            if (reembolso.getDataResolucao_Reembolso() == null) {
-                comando.setNull(3, Types.DATE);
+            comando.setTime(
+                3,
+                java.sql.Time.valueOf(
+                    reembolso.getHoraSoli_Reembolso()
+                )
+            );
+
+            if (reembolso.getData_Reembolso() == null) {
+                comando.setNull(4, Types.DATE);
             } else {
                 comando.setDate(
-                    3,
-                    java.sql.Date.valueOf(reembolso.getDataResolucao_Reembolso())
+                    4,
+                    java.sql.Date.valueOf(
+                        reembolso.getData_Reembolso()
+                    )
                 );
             }
 
-            comando.setTime(
-                4,
-                java.sql.Time.valueOf(reembolso.getHorarioAgendado_Reembolso())
-            );
-
-            if (reembolso.getHorarioColeta_Reembolso() == null) {
+            if (reembolso.getHora_Reembolso() == null) {
                 comando.setNull(5, Types.TIME);
             } else {
                 comando.setTime(
                     5,
-                    java.sql.Time.valueOf(reembolso.getHorarioColeta_Reembolso())
+                    java.sql.Time.valueOf(
+                        reembolso.getHora_Reembolso()
+                    )
                 );
             }
 
-            comando.setInt(6, reembolso.getIdCliente_Reembolso());
-            comando.setInt(7, reembolso.getIdPagamento_Reembolso());
+            if (reembolso.getCompra_id_compra_pk() == null) {
+                comando.setNull(6, Types.INTEGER);
+            } else {
+                comando.setInt(
+                    6,
+                    reembolso.getCompra_id_compra_pk()
+                );
+            }
+
+            if (reembolso.getLocacao_id_locacao_pk() == null) {
+                comando.setNull(7, Types.INTEGER);
+            } else {
+                comando.setInt(
+                    7,
+                    reembolso.getLocacao_id_locacao_pk()
+                );
+            }
 
             comando.executeUpdate();
         }

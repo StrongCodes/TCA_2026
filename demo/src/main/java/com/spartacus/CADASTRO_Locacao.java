@@ -13,20 +13,29 @@ public class CADASTRO_Locacao {
         LocalTime HorarioAgendadoParaColeta_locacao,
         LocalTime HorarioDeColeta_locacao,
         LocalDate DataDeColeta_locacao,
-        String Periodo_locacao,
+        double Periodo_locacao,
         int id_cliente_pk,
-        int id_carro_pk
+        int id_carro_pk,
+        String MetodoDePagamento_locacao,
+        LocalTime HorarioDePagamento_locacao,
+        LocalDate DataDePagamento_locacao,
+        Double ValorDeEntrada_locacao
     ) {
         try {
+
             locacao novaLocacao = new locacao(
-                id_locacao_pk,
+                id_locacao_pk == null ? 0 : id_locacao_pk,
                 DataAgendadaParaColeta_locacao,
                 HorarioAgendadoParaColeta_locacao,
                 HorarioDeColeta_locacao,
                 DataDeColeta_locacao,
                 Periodo_locacao,
                 id_cliente_pk,
-                id_carro_pk
+                id_carro_pk,
+                MetodoDePagamento_locacao,
+                HorarioDePagamento_locacao,
+                DataDePagamento_locacao,
+                ValorDeEntrada_locacao
             );
 
             locacaoDAO dao = new locacaoDAO();

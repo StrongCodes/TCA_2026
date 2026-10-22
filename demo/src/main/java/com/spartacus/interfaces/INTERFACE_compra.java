@@ -1,4 +1,3 @@
-
 package com.spartacus.interfaces;
 
 import java.time.LocalDate;
@@ -12,4 +11,8 @@ public interface INTERFACE_compra {
     LocalTime getHorarioColeta_Compra();
     int getIdCliente_Compra();
     int getIdCarro_Compra();
+    String getMetodoDePagamento_Compra();
+    LocalTime getHorarioDePagamento_Compra();
+    LocalDate getDataDePagamento_Compra();
+    Double getValorDeEntrada_Compra();
 }

@@ -7,19 +7,22 @@ import java.time.LocalDate;
 public class CADASTRO_Parcela {
 
     public static void ColetaDados_Parcela(
-        Integer id_parcela,
-        int Numero_parcela,
-        LocalDate DataVencimento_parcela,
-        String Status_parcela,
-        int id_pagamento_pk
+        int id_parcela_pk,
+        int NumeroDeParcelas_pk,
+        LocalDate DataDeVencimento_parcela,
+        String status_parcela,
+        Integer locacao_id_locacao_pk,
+        Integer compra_id_compra_pk
     ) {
         try {
+
             parcela novaParcela = new parcela(
-                id_parcela,
-                Numero_parcela,
-                DataVencimento_parcela,
-                Status_parcela,
-                id_pagamento_pk
+                id_parcela_pk,
+                NumeroDeParcelas_pk,
+                DataDeVencimento_parcela,
+                status_parcela,
+                locacao_id_locacao_pk,
+                compra_id_compra_pk
             );
 
             parcelaDAO dao = new parcelaDAO();

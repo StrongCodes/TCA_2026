@@ -345,7 +345,7 @@ async function AtualizaCarros_Categorias(i) {
             
     let Paragrafo = document.getElementById(`ParagrafoCarro${i}`)
 
-    document.getElementById(`DivCarro_${i}`).style.backgroundImage = `url('/imagens/${modelo}/Branco.png')`;
+    document.getElementById(`DivCarro_${i}`).style.backgroundImage = `url('/imagens/${modelo}/Vermelho.png')`;
 
     if (Paragrafo) {
         Paragrafo.innerText = modelo;

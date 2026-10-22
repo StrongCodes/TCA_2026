@@ -1,4 +1,3 @@
-
 package com.spartacus.dao;
 
 import com.spartacus.db.ConexãoBD;
@@ -16,37 +15,29 @@ public class carroDAO {
         String sql = """
             INSERT INTO carro (
                 modelo_carro,
-                ano_carro,
-                cor_carro,
-                Disponibilidade_carro,
-                id_motor,
-                id_desconto_pk
+                potenciaMotor_carro,
+                tipoMotor_carro,
+                numDeCilindros_motor,
+                nota
             )
-            VALUES (?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
             """;
 
         try (
             Connection conexao = ConexãoBD.conectar();
-            PreparedStatement comando =
-                conexao.prepareStatement(sql)
+            PreparedStatement comando = conexao.prepareStatement(sql)
         ) {
-            comando.setString(1, carro.getModelo_Carro());
-            comando.setInt(2, carro.getAno_Carro());
-            comando.setString(3, carro.getCor_Carro());
-            comando.setBoolean(4, carro.getDisponibilidade_Carro());
-            comando.setInt(5, carro.getIdMotor_Carro());
 
-            if (carro.getIdDesconto_Carro() == null) {
-                comando.setNull(6, java.sql.Types.INTEGER);
-            } else {
-                comando.setInt(6, carro.getIdDesconto_Carro());
-            }
+            comando.setString(1, carro.getModelo_carro());
+            comando.setString(2, carro.getPotencia_motor());
+            comando.setString(3, carro.getTipo_motor());
+            comando.setInt(4, carro.getNumDeCilindros_motor());
+            comando.setDouble(5, carro.getNota());
 
             comando.executeUpdate();
         }
     }
 
-    
     public static Object ConsultarCarroPorID(
         int idCarro,
         String AtributoDesejado
@@ -65,29 +56,30 @@ public class carroDAO {
 
                 if (resultado.next()) {
 
-                    if (AtributoDesejado.equals("modelo_carro")) {
-                        return resultado.getString("modelo_carro");
-                    }
-                    else if (AtributoDesejado.equals("ano_carro")) {
-                        return resultado.getString("ano_carro");
-                    }
-                    else if (AtributoDesejado.equals("cor_carro")) {
-                        return resultado.getString("cor_carro");
-                    }
-                    else if (AtributoDesejado.equals("disponibilidade_carro")) {
-                        return resultado.getBoolean("disponibilidade_carro");
-                    }
-                    else if (AtributoDesejado.equals("nota")) {
-                        return resultado.getDouble("nota");
-                    }
-                    else if (AtributoDesejado.equals("motor_id_motor_fk")) {
-                        return resultado.getInt("motor_id_motor_fk");
-                    }
-                    else if (AtributoDesejado.equals("desconto_id_desconto_pk")) {
-                        return resultado.getObject("desconto_id_desconto_pk", Integer.class);
+                    switch (AtributoDesejado) {
+
+                        case "id_carro_pk":
+                            return resultado.getInt("id_carro_pk");
+
+                        case "modelo_carro":
+                            return resultado.getString("modelo_carro");
+
+                        case "potenciaMotor_carro":
+                            return resultado.getString("potenciaMotor_carro");
+
+                        case "tipoMotor_carro":
+                            return resultado.getString("tipoMotor_carro");
+
+                        case "numDeCilindros_motor":
+                            return resultado.getInt("numDeCilindros_motor");
+
+                        case "nota":
+                            return resultado.getDouble("nota");
+
+                        default:
+                            return null;
                     }
                 }
-
             }
 
         } catch (SQLException e) {
@@ -96,5 +88,4 @@ public class carroDAO {
 
         return null;
     }
-
 }

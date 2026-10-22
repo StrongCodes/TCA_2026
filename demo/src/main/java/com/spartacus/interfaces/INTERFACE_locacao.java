@@ -1,4 +1,3 @@
-
 package com.spartacus.interfaces;
 
 import java.time.LocalDate;
@@ -10,7 +9,11 @@ public interface INTERFACE_locacao {
     LocalTime getHorarioAgendado_Locacao();
     LocalTime getHorarioColeta_Locacao();
     LocalDate getDataColeta_Locacao();
-    String getPeriodo_Locacao();
+    double getPeriodo_Locacao();
     int getIdCliente_Locacao();
     int getIdCarro_Locacao();
+    String getMetodoDePagamento_Locacao();
+    LocalTime getHorarioDePagamento_Locacao();
+    LocalDate getDataDePagamento_Locacao();
+    Double getValorDeEntrada_Locacao();
 }

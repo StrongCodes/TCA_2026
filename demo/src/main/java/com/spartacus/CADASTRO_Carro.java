@@ -1,4 +1,3 @@
-
 package com.spartacus;
 
 import com.spartacus.model.carro;
@@ -6,17 +5,16 @@ import com.spartacus.dao.carroDAO;
 
 public class CADASTRO_Carro {
 
-    public static void main() {
+    public static void main(String[] args) {
         try {
+
             carro novoCarro = new carro(
                 0,
                 "Fiat Mobi",
-                2026,
-                "Branco",
-                true,
-                22,
-                null,
-                0
+                "75 cv",
+                "Flex",
+                3,
+                5.0
             );
 
             carroDAO dao = new carroDAO();

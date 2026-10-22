@@ -1,4 +1,3 @@
-
 package com.spartacus.model;
 
 import com.spartacus.interfaces.INTERFACE_parcela;
@@ -6,43 +5,50 @@ import java.time.LocalDate;
 
 public class parcela implements INTERFACE_parcela {
 
-    private int id_parcela;
-    private int Numero_parcela;
-    private LocalDate DataVencimento_parcela;
-    private String Status_parcela;
-    private int id_pagamento_pk;
+    private int id_parcela_pk;
+    private int NumeroDeParcelas_pk;
+    private LocalDate DataDeVencimento_parcela;
+    private String status_parcela;
+    private Integer locacao_id_locacao_pk;
+    private Integer compra_id_compra_pk;
 
     public parcela(
-        int id_parcela,
-        int numero,
-        LocalDate dataVencimento,
-        String status,
-        int id_pagamento_pk
+        int id_parcela_pk,
+        int NumeroDeParcelas_pk,
+        LocalDate DataDeVencimento_parcela,
+        String status_parcela,
+        Integer locacao_id_locacao_pk,
+        Integer compra_id_compra_pk
     ) {
-        this.id_parcela = id_parcela;
-        this.Numero_parcela = numero;
-        this.DataVencimento_parcela = dataVencimento;
-        this.Status_parcela = status;
-        this.id_pagamento_pk = id_pagamento_pk;
+        this.id_parcela_pk = id_parcela_pk;
+        this.NumeroDeParcelas_pk = NumeroDeParcelas_pk;
+        this.DataDeVencimento_parcela = DataDeVencimento_parcela;
+        this.status_parcela = status_parcela;
+        this.locacao_id_locacao_pk = locacao_id_locacao_pk;
+        this.compra_id_compra_pk = compra_id_compra_pk;
     }
 
-    public int getIdParcela_Parcela() { 
-        return id_parcela; 
+    public int getId_parcela_pk() {
+        return id_parcela_pk;
     }
-    
-    public int getNumero_Parcela() { 
-        return Numero_parcela; 
+
+    public int getNumeroDeParcelas_pk() {
+        return NumeroDeParcelas_pk;
     }
-    
-    public LocalDate getDataVencimento_Parcela() { 
-        return DataVencimento_parcela; 
+
+    public LocalDate getDataDeVencimento_parcela() {
+        return DataDeVencimento_parcela;
     }
-    
-    public String getStatus_Parcela() { 
-        return Status_parcela; 
+
+    public String getStatus_parcela() {
+        return status_parcela;
     }
-    
-    public int getIdPagamento_Parcela() { 
-        return id_pagamento_pk; 
+
+    public Integer getLocacao_id_locacao_pk() {
+        return locacao_id_locacao_pk;
+    }
+
+    public Integer getCompra_id_compra_pk() {
+        return compra_id_compra_pk;
     }
 }

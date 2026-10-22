@@ -1,16 +1,15 @@
-
 package com.spartacus.interfaces;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public interface INTERFACE_reembolso {
-    public int getIdReembolso_Reembolso();
-    public double getValor_Reembolso();
-    public LocalDate getDataSolicitacao_Reembolso();
-    public LocalDate getDataResolucao_Reembolso();
-    public LocalTime getHorarioAgendado_Reembolso();
-    public LocalTime getHorarioColeta_Reembolso();
-    public int getIdCliente_Reembolso();
-    public int getIdPagamento_Reembolso();
+    int getId_Reembolso_pk();
+    double getValor_Reembolso();
+    LocalDate getDataSoli_Reembolso();
+    LocalTime getHoraSoli_Reembolso();
+    LocalDate getData_Reembolso();
+    LocalTime getHora_Reembolso();
+    Integer getCompra_id_compra_pk();
+    Integer getLocacao_id_locacao_pk();
 }
