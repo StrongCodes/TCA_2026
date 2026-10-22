@@ -322,6 +322,10 @@ function MudaTela(TelaDesejada) {
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    PersonalizaDetalhes(10);
+});
+
 async function PersonalizaDetalhes(id){
     let modelo = await ConsultarCarroPorID(id, "modelo_carro");
     document.getElementById("DivTeste").style.backgroundImage = `url('/imagens/${modelo}/Vermelho.png')`;
