@@ -32,6 +32,7 @@ CREATE TABLE carro (
         'Elétrico',
         'Híbrido'
     ) NOT NULL,
+    NumDeCilindrosMotor_carro INT NOT NULL,
 
     PRIMARY KEY (id_carro_pk)
 );

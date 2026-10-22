@@ -4,6 +4,7 @@ package com.spartacus;
 import io.javalin.Javalin;
 import java.util.Map;
 import com.spartacus.dao.carroDAO;
+import com.spartacus.dao.carroDisponivelDAO;
 
 public class App {
 
@@ -18,6 +19,20 @@ public class App {
                     "loja", "SPARTACUS",
                     "status", "online"
                 ));
+            });
+
+            config.routes.get("/api/ConsultarCarroDisponivelPorID/{ID}/{AtributoDesejado}", ctx -> {
+
+                int ID = Integer.parseInt(ctx.pathParam("ID"));
+                String AtributoDesejado = ctx.pathParam("AtributoDesejado");
+
+                Object Resultado = carroDisponivelDAO.ConsultarCarroDisponivelPorID(ID, AtributoDesejado);
+
+                if (Resultado != null) {
+                    ctx.json(Resultado);
+                } else {
+                    ctx.status(404).result("Carro ou atributo não encontrado");
+                }
             });
 
             config.routes.get("/api/ConsultarCarroPorID/{ID}/{AtributoDesejado}", ctx -> {

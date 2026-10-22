@@ -322,6 +322,10 @@ function MudaTela(TelaDesejada) {
     }
 }
 
+async function PersonalizaDetalhes(id){
+    let modelo = await ConsultarCarroPorID(id, "modelo_carro");
+    document.getElementById("DivTeste").style.backgroundImage = `url('/imagens/${modelo}/Vermelho.png')`;
+}
 
 async function ConsultarCarroPorID(ID, AtributoDesejado) {
 
@@ -338,14 +342,29 @@ async function ConsultarCarroPorID(ID, AtributoDesejado) {
     return Resultado;
 }
 
+async function ConsultarCarroDisponivelPorID(ID, AtributoDesejado) {
+
+    const resposta = await fetch(
+        `/api/ConsultarCarroDisponivelPorID/${ID}/${AtributoDesejado}`
+    );
+
+    if (!resposta.ok) {
+        throw new Error("Erro ao consultar carro");
+    }
+
+    const Resultado = await resposta.text();
+
+    return Resultado;
+}
+
 
 async function AtualizaCarros_Categorias(i) {
 
     let modelo = await ConsultarCarroPorID(i, "modelo_carro");
-            
+    let cor = await ConsultarCarroDisponivelPorID(i, "cor_carroDisponivel");
     let Paragrafo = document.getElementById(`ParagrafoCarro${i}`)
 
-    document.getElementById(`DivCarro_${i}`).style.backgroundImage = `url('/imagens/${modelo}/Vermelho.png')`;
+    document.getElementById(`DivCarro_${i}`).style.backgroundImage = `url('/imagens/${modelo}/${cor}.png')`;
 
     if (Paragrafo) {
         Paragrafo.innerText = modelo;
