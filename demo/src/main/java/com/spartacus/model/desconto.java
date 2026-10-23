@@ -1,7 +1,6 @@
 package com.spartacus.model;
 
 import java.time.LocalDate;
-import java.math.BigDecimal;
 import com.spartacus.interfaces.INTERFACE_desconto;
 import com.spartacus.db.ConexãoBD;
 import java.sql.Connection;
@@ -12,13 +11,13 @@ import java.sql.Date;
 public class desconto implements INTERFACE_desconto {
 
     private int id_desconto_pk;
-    private BigDecimal porcentagem_desconto;
+    private double porcentagem_desconto;
     private LocalDate data_inicio_desconto;
     private LocalDate data_final_desconto;
 
     public desconto(
         int id_desconto_pk,
-        BigDecimal porcentagem_desconto,
+        double porcentagem_desconto,
         LocalDate data_inicio_desconto,
         LocalDate data_final_desconto
     ) {
@@ -49,7 +48,7 @@ public class desconto implements INTERFACE_desconto {
                 conexao.prepareStatement(sql)
         ) {
 
-            comando.setBigDecimal(
+            comando.setDouble(
                 1, desconto.porcentagem_desconto
             );
 
