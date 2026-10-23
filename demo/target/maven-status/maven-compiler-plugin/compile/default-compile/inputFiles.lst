@@ -4,6 +4,8 @@
 /home/strong/TCA_2026/demo/src/main/java/com/spartacus/model/carro.java
 /home/strong/TCA_2026/demo/src/main/java/com/spartacus/model/compra.java
 /home/strong/TCA_2026/demo/src/main/java/com/spartacus/model/locacao.java
+/home/strong/TCA_2026/demo/src/main/java/com/spartacus/interfaces/INTERFACE_telefone_cliente.java
+/home/strong/TCA_2026/demo/src/main/java/com/spartacus/model/telefone_cliente.java
 /home/strong/TCA_2026/demo/src/main/java/com/spartacus/interfaces/INTERFACE_reembolso.java
 /home/strong/TCA_2026/demo/src/main/java/com/spartacus/interfaces/INTERFACE_compra.java
 /home/strong/TCA_2026/demo/src/main/java/com/spartacus/model/carroDisponivel.java
