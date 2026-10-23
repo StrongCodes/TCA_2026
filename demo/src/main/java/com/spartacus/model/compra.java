@@ -1,8 +1,14 @@
+
 package com.spartacus.model;
 
 import com.spartacus.interfaces.INTERFACE_compra;
+import com.spartacus.db.ConexãoBD;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Types;
 
 public class compra implements INTERFACE_compra {
 
@@ -14,11 +20,6 @@ public class compra implements INTERFACE_compra {
     private int id_cliente_pk;
     private int id_carro_pk;
 
-    private String MetodoDePagamento_compra;
-    private LocalTime HorarioDePagamento_compra;
-    private LocalDate DataDePagamento_compra;
-    private Double ValorDeEntrada_compra;
-
     public compra(
         int id_compra_pk,
         LocalDate DataAgendadaParaColeta_compra,
@@ -26,11 +27,7 @@ public class compra implements INTERFACE_compra {
         LocalTime HorarioAgendadoParaColeta_compra,
         LocalTime HorarioDeColeta_compra,
         int id_cliente_pk,
-        int id_carro_pk,
-        String MetodoDePagamento_compra,
-        LocalTime HorarioDePagamento_compra,
-        LocalDate DataDePagamento_compra,
-        Double ValorDeEntrada_compra
+        int id_carro_pk
     ) {
         this.id_compra_pk = id_compra_pk;
         this.DataAgendadaParaColeta_compra = DataAgendadaParaColeta_compra;
@@ -39,54 +36,86 @@ public class compra implements INTERFACE_compra {
         this.HorarioDeColeta_compra = HorarioDeColeta_compra;
         this.id_cliente_pk = id_cliente_pk;
         this.id_carro_pk = id_carro_pk;
-
-        this.MetodoDePagamento_compra = MetodoDePagamento_compra;
-        this.HorarioDePagamento_compra = HorarioDePagamento_compra;
-        this.DataDePagamento_compra = DataDePagamento_compra;
-        this.ValorDeEntrada_compra = ValorDeEntrada_compra;
     }
 
     public int getIdCompra_Compra() {
         return id_compra_pk;
     }
 
-    public LocalDate getDataAgendada_Compra() {
-        return DataAgendadaParaColeta_compra;
-    }
+    public void cadastrar(compra compra) throws SQLException {
 
-    public LocalDate getDataColeta_Compra() {
-        return DataDeColeta_compra;
-    }
+        String sql = """
+            INSERT INTO compra (
+                dataAgendadaParaColeta_compra,
+                dataDeColeta_compra,
+                horarioAgendadoParaColeta_compra,
+                horaDeColeta_compra,
+                cliente_id_cliente_pk,
+                Carro_Disponivel_id_carro_pk
+            )
+            VALUES (?, ?, ?, ?, ?, ?)
+            """;
 
-    public LocalTime getHorarioAgendado_Compra() {
-        return HorarioAgendadoParaColeta_compra;
-    }
+        try (
+            Connection conexao = ConexãoBD.conectar();
+            PreparedStatement comando = conexao.prepareStatement(sql)
+        ) {
 
-    public LocalTime getHorarioColeta_Compra() {
-        return HorarioDeColeta_compra;
-    }
+            if (compra.DataAgendadaParaColeta_compra == null) {
+                comando.setNull(1, Types.DATE);
+            } else {
+                comando.setDate(
+                    1,
+                    java.sql.Date.valueOf(
+                        compra.DataAgendadaParaColeta_compra
+                    )
+                );
+            }
 
-    public int getIdCliente_Compra() {
-        return id_cliente_pk;
-    }
+            if (compra.DataDeColeta_compra == null) {
+                comando.setNull(2, Types.DATE);
+            } else {
+                comando.setDate(
+                    2,
+                    java.sql.Date.valueOf(
+                        compra.DataDeColeta_compra
+                    )
+                );
+            }
 
-    public int getIdCarro_Compra() {
-        return id_carro_pk;
-    }
+            if (compra.HorarioAgendadoParaColeta_compra == null) {
+                comando.setNull(3, Types.TIME);
+            } else {
+                comando.setTime(
+                    3,
+                    java.sql.Time.valueOf(
+                        compra.HorarioAgendadoParaColeta_compra
+                    )
+                );
+            }
 
-    public String getMetodoDePagamento_Compra() {
-        return MetodoDePagamento_compra;
-    }
+            if (compra.HorarioDeColeta_compra == null) {
+                comando.setNull(4, Types.TIME);
+            } else {
+                comando.setTime(
+                    4,
+                    java.sql.Time.valueOf(
+                        compra.HorarioDeColeta_compra
+                    )
+                );
+            }
 
-    public LocalTime getHorarioDePagamento_Compra() {
-        return HorarioDePagamento_compra;
-    }
+            comando.setInt(
+                5,
+                compra.id_cliente_pk
+            );
 
-    public LocalDate getDataDePagamento_Compra() {
-        return DataDePagamento_compra;
-    }
+            comando.setInt(
+                6,
+                compra.id_carro_pk
+            );
 
-    public Double getValorDeEntrada_Compra() {
-        return ValorDeEntrada_compra;
+            comando.executeUpdate();
+        }
     }
 }

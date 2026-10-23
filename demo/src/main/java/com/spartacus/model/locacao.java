@@ -1,8 +1,14 @@
+
 package com.spartacus.model;
 
 import com.spartacus.interfaces.INTERFACE_locacao;
+import com.spartacus.db.ConexãoBD;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Types;
 
 public class locacao implements INTERFACE_locacao {
 
@@ -15,11 +21,6 @@ public class locacao implements INTERFACE_locacao {
     private int id_cliente_pk;
     private int id_carro_pk;
 
-    private String MetodoDePagamento_locacao;
-    private LocalTime HorarioDePagamento_locacao;
-    private LocalDate DataDePagamento_locacao;
-    private Double ValorDeEntrada_locacao;
-
     public locacao(
         int id_locacao_pk,
         LocalDate DataAgendadaParaColeta_locacao,
@@ -28,11 +29,7 @@ public class locacao implements INTERFACE_locacao {
         LocalDate DataDeColeta_locacao,
         double Periodo_locacao,
         int id_cliente_pk,
-        int id_carro_pk,
-        String MetodoDePagamento_locacao,
-        LocalTime HorarioDePagamento_locacao,
-        LocalDate DataDePagamento_locacao,
-        Double ValorDeEntrada_locacao
+        int id_carro_pk
     ) {
         this.id_locacao_pk = id_locacao_pk;
         this.DataAgendadaParaColeta_locacao = DataAgendadaParaColeta_locacao;
@@ -42,58 +39,92 @@ public class locacao implements INTERFACE_locacao {
         this.Periodo_locacao = Periodo_locacao;
         this.id_cliente_pk = id_cliente_pk;
         this.id_carro_pk = id_carro_pk;
-
-        this.MetodoDePagamento_locacao = MetodoDePagamento_locacao;
-        this.HorarioDePagamento_locacao = HorarioDePagamento_locacao;
-        this.DataDePagamento_locacao = DataDePagamento_locacao;
-        this.ValorDeEntrada_locacao = ValorDeEntrada_locacao;
     }
 
     public int getIdLocacao_Locacao() {
         return id_locacao_pk;
     }
 
-    public LocalDate getDataAgendada_Locacao() {
-        return DataAgendadaParaColeta_locacao;
-    }
+    public void cadastrar(locacao locacao) throws SQLException {
 
-    public LocalTime getHorarioAgendado_Locacao() {
-        return HorarioAgendadoParaColeta_locacao;
-    }
+        String sql = """
+            INSERT INTO locacao (
+                dataAgendadaParaColeta_locacao,
+                horarioAgendadoParaColeta_locacao,
+                horaDeColeta_locacao,
+                dataDeColeta_locacao,
+                Periodo_locacao,
+                cliente_id_cliente_pk,
+                Carro_Disponivel_id_carro_pk
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            """;
 
-    public LocalTime getHorarioColeta_Locacao() {
-        return HorarioDeColeta_locacao;
-    }
+        try (
+            Connection conexao = ConexãoBD.conectar();
+            PreparedStatement comando = conexao.prepareStatement(sql)
+        ) {
 
-    public LocalDate getDataColeta_Locacao() {
-        return DataDeColeta_locacao;
-    }
+            if (locacao.DataAgendadaParaColeta_locacao == null) {
+                comando.setNull(1, Types.DATE);
+            } else {
+                comando.setDate(
+                    1,
+                    java.sql.Date.valueOf(
+                        locacao.DataAgendadaParaColeta_locacao
+                    )
+                );
+            }
 
-    public double getPeriodo_Locacao() {
-        return Periodo_locacao;
-    }
+            if (locacao.HorarioAgendadoParaColeta_locacao == null) {
+                comando.setNull(2, Types.TIME);
+            } else {
+                comando.setTime(
+                    2,
+                    java.sql.Time.valueOf(
+                        locacao.HorarioAgendadoParaColeta_locacao
+                    )
+                );
+            }
 
-    public int getIdCliente_Locacao() {
-        return id_cliente_pk;
-    }
+            if (locacao.HorarioDeColeta_locacao == null) {
+                comando.setNull(3, Types.TIME);
+            } else {
+                comando.setTime(
+                    3,
+                    java.sql.Time.valueOf(
+                        locacao.HorarioDeColeta_locacao
+                    )
+                );
+            }
 
-    public int getIdCarro_Locacao() {
-        return id_carro_pk;
-    }
+            if (locacao.DataDeColeta_locacao == null) {
+                comando.setNull(4, Types.DATE);
+            } else {
+                comando.setDate(
+                    4,
+                    java.sql.Date.valueOf(
+                        locacao.DataDeColeta_locacao
+                    )
+                );
+            }
 
-    public String getMetodoDePagamento_Locacao() {
-        return MetodoDePagamento_locacao;
-    }
+            comando.setDouble(
+                5,
+                locacao.Periodo_locacao
+            );
 
-    public LocalTime getHorarioDePagamento_Locacao() {
-        return HorarioDePagamento_locacao;
-    }
+            comando.setInt(
+                6,
+                locacao.id_cliente_pk
+            );
 
-    public LocalDate getDataDePagamento_Locacao() {
-        return DataDePagamento_locacao;
-    }
+            comando.setInt(
+                7,
+                locacao.id_carro_pk
+            );
 
-    public Double getValorDeEntrada_Locacao() {
-        return ValorDeEntrada_locacao;
+            comando.executeUpdate();
+        }
     }
 }

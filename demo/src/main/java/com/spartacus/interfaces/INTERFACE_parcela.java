@@ -1,12 +1,8 @@
 package com.spartacus.interfaces;
 
-import java.time.LocalDate;
+import java.sql.SQLException;
+import com.spartacus.model.parcela;
 
 public interface INTERFACE_parcela {
-    int getId_parcela_pk();
-    int getNumeroDeParcelas_pk();
-    LocalDate getDataDeVencimento_parcela();
-    String getStatus_parcela();
-    Integer getLocacao_id_locacao_pk();
-    Integer getCompra_id_compra_pk();
+    public void cadastrar(parcela parcela) throws SQLException;
 }

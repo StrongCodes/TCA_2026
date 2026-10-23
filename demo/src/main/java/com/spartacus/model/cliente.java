@@ -1,7 +1,10 @@
-
 package com.spartacus.model;
 
 import com.spartacus.interfaces.INTERFACE_cliente;
+import com.spartacus.db.ConexãoBD;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class cliente implements INTERFACE_cliente {
 
@@ -28,27 +31,41 @@ public class cliente implements INTERFACE_cliente {
         this.CEP = CEP;
     }
 
-    public int getIdCliente_Cliente() {
+    public int getId_cliente_pk() {
         return id_cliente_pk;
     }
 
-    public String getNome_Cliente() {
-        return nome_cliente;
-    }
+    public void cadastrar(cliente cliente) throws SQLException {
 
-    public String getSenha_Cliente() {
-        return senha_cliente;
-    }
+        String sql = """
+            INSERT INTO cliente (
+                nome_cliente,
+                senha_cliente,
+                email_cliente,
+                telefone_cliente,
+                CEP
+            )
+            VALUES (?, ?, ?, ?, ?)
+            """;
 
-    public String getEmail_Cliente() {
-        return email_cliente;
-    }
+        try (
+            Connection conexao = ConexãoBD.conectar();
+            PreparedStatement comando =
+                conexao.prepareStatement(sql)
+        ) {
+            comando.setString(1, cliente.nome_cliente);
+            comando.setString(2, cliente.senha_cliente);
+            comando.setString(3, cliente.email_cliente);
 
-    public String getTelefone_Cliente() {
-        return telefone_cliente;
-    }
+            if (cliente.telefone_cliente == null) {
+                comando.setNull(4, java.sql.Types.VARCHAR);
+            } else {
+                comando.setString(4, cliente.telefone_cliente);
+            }
 
-    public String getCEP_Cliente() {
-        return CEP;
+            comando.setString(5, cliente.CEP);
+
+            comando.executeUpdate();
+        }
     }
 }

@@ -3,8 +3,8 @@ package com.spartacus;
 
 import io.javalin.Javalin;
 import java.util.Map;
-import com.spartacus.dao.carroDAO;
-import com.spartacus.dao.carroDisponivelDAO;
+import com.spartacus.model.carro;
+import com.spartacus.model.carroDisponivel;
 
 public class App {
 
@@ -26,7 +26,7 @@ public class App {
                 int ID = Integer.parseInt(ctx.pathParam("ID"));
                 String AtributoDesejado = ctx.pathParam("AtributoDesejado");
 
-                Object Resultado = carroDisponivelDAO.ConsultarCarroDisponivelPorID(ID, AtributoDesejado);
+                Object Resultado = carroDisponivel.ConsultarCarroDisponivelPorID(ID, AtributoDesejado);
 
                 if (Resultado != null) {
                     ctx.json(Resultado);
@@ -40,7 +40,7 @@ public class App {
                 int ID = Integer.parseInt(ctx.pathParam("ID"));
                 String AtributoDesejado = ctx.pathParam("AtributoDesejado");
 
-                Object Resultado = carroDAO.ConsultarCarroPorID(ID, AtributoDesejado);
+                Object Resultado = carro.ConsultarCarroPorID(ID, AtributoDesejado);
 
                 if (Resultado != null) {
                     ctx.json(Resultado);
