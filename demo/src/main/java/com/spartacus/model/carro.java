@@ -60,10 +60,7 @@ public class carro implements INTERFACE_carro {
         }
     }
 
-    public static Object ConsultarCarroPorID(
-        int idCarro,
-        String AtributoDesejado
-    ) {
+    public static Object ConsultarCarroPorID(int idCarro, String AtributoDesejado) {
 
         String sql = "SELECT * FROM carro WHERE id_carro_pk = ?";
 
