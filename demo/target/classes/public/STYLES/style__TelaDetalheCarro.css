@@ -581,73 +581,185 @@ body{
     border-left: 40px solid rgb(239, 239, 232);
 }
 
-@keyframes AnimaçaoContato{
-    from{
-        width: 50px;
-        border-radius: 50%
-    }
-    to{
-        width: 210px;
-        border-radius: 70px;
-    }
-}
-
-@keyframes AnimaçaoContatoDois{
-    from{
-        width: 210px;
-        border-radius: 70px;
-    }
-    to{
-        width: 50px;
-        border-radius: 50%
-    }
-}
-
-.DivContato{
-    display: flex;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color:#078408;
-    align-items: center;
-    position: fixed;
-    top: 83%;
-    right: 1%;
-    z-index: 15;
-    border: 5px solid white;
-    box-shadow: 5px 5px 10px black;
-}
-
-.ParagrafoContato{
-    display: none;
-    color: white;
-    font-size: 27px;
-    justify-content: left;
-    font-weight: 900;
-    position: absolute;
-    left: 5%;
-    font-family: italic;
-}
-
-.DivLogoWhatsApp{
-    display: flex;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: -12.5%;
-}
-
-.DivTeste{
+.DivDetalhesImagem{
     display: flex;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-image: none;
-    width: 40%;
-    height: 40vw;
+    width: 70%;
+    height: 50vw;
     border: 5px solid red;
+    position: absolute;
+    left: -5%;
+    top: -15%;
+}
+
+.DivOpçoesDetalhes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(39, 39, 39); 
+    width: 35%;
+    height: 100vh;
+    position: absolute;
+    right: 0%;  
+}
+
+.DivPrimaria{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    gap: 5px;
+}
+
+.DivPrimaria p{
+    margin: 0;
+}
+
+.ParagrafoModelo{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.ParagrafoAnoeCor{
+    color: rgb(173, 173, 173);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.ParagrafoPreço{
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.DivSeparaçao{
+    width: 90%;
+    height: 2px;
+    background-color: gray;
+    position: absolute;
+    top: 36%;
+}
+
+.ParagrafoEspecificaçoes{
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#DivCombustivel,
+#DivPotencia,
+#DivCilindros,
+#DivAvaliacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 428px;
+}
+
+.ParagrafoCombustivel,
+.ParagrafoPotencia,
+.ParagrafoCilindros,
+.ParagrafoAvaliacao{
+    color: gray;
+    font-style: italic;
+}
+
+.ParagrafoValorCombustivel,
+.ParagrafoValorPotencia,
+.ParagrafoValorCilindros,
+.ParagrafoValorAvaliacao{
+    color: white;
+    font-weight: bold;
+}
+
+.DivInformaçoes{
+    position: absolute;
+    top: 36%;
+    left: 5%;
+}
+
+.DivInformaçoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.DivTenhoInteresse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(22, 21, 21);
+    width: 100%;
+    height: 15vh;
+    position: absolute;
+    bottom: 0%;
+}
+
+.ParagrafoTenhoInteresse{
+    font-size: 35px;
+    font-family: italic;
+    font-weight: bold;
+    position: absolute;
+    top: -24%;
+    left: 5%;
+    color: white;
+}
+
+.ParagrafoMelhorForma{
+    font-size: 25px;
+    font-weight: 600;
+    font-style: oblique;
+    position: absolute;
+    top: 22%;
+    left: 5%;
+    color: rgb(105, 105, 105);
+}
+
+.DivBotaoComprar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(228, 4, 26);
+    
+    color: white;
+    font-weight: bold;
+    font-family: italic;
+    font-size: 20px;
+    
+    width: 160px;
+    height: 45px;
+    border-bottom: 10px solid rgb(155, 0, 0);
+    border-left: 10px solid rgb(53, 0, 0);;
+
+    position: absolute;
+    right: 18%;
+    user-select: none;
+}
+
+.DivBotaoLocar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(228, 4, 26);
+    
+    color: white;
+    font-weight: bold;
+    font-family: italic;
+    font-size: 20px;
+    
+    width: 160px;
+    height: 45px;
+    border-bottom: 10px solid rgb(155, 0, 0);
+    border-left: 10px solid rgb(53, 0, 0);;
+
+    position: absolute;
+    right: 3%;
+    user-select: none;
 }

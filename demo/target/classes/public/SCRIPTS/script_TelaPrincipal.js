@@ -312,8 +312,12 @@ div.addEventListener("mouseleave", () => {
     document.getElementById("DivLogoWhatsApp").style.transform = "none"
 });
 
-function MudaTela(TelaDesejada) {
+function MudaTela(TelaDesejada, id = null) {
     if (!TelaDesejada) return;
+
+    if (id !== null) {
+        sessionStorage.setItem("IDdetalhes", id);
+    }
 
     const Janela = window.open(`/TELAS/${TelaDesejada}.html`, "_blank");
 
@@ -323,13 +327,8 @@ function MudaTela(TelaDesejada) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    PersonalizaDetalhes(10);
+    PersonalizaDetalhes(IDdetalhes);
 });
-
-async function PersonalizaDetalhes(id){
-    let modelo = await ConsultarCarroPorID(id, "modelo_carro");
-    document.getElementById("DivTeste").style.backgroundImage = `url('/imagens/${modelo}/Vermelho.png')`;
-}
 
 async function ConsultarCarroPorID(ID, AtributoDesejado) {
 
