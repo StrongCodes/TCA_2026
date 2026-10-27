@@ -66,7 +66,6 @@ public class carroDisponivel extends carro implements INTERFACE_carroDisponivel 
             Connection conexao = ConexãoBD.conectar();
             PreparedStatement comando = conexao.prepareStatement(sql)
         ) {
-
             comando.setInt(1, carro.getId_carro_pk());
             comando.setInt(2, carro.ano_carro);
             comando.setString(3, carro.cor_carro);

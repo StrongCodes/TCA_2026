@@ -1,3 +1,5 @@
+// LÓGICA ESTEIRA DE CARROS:
+
 let idAnterior = 0;
 let CategoriaAtual = 0;
 
@@ -73,6 +75,15 @@ function CategoriaSeguinte(){
     }
 }
 
+
+
+
+
+
+
+
+// LÓGICA MENU:
+
 auxMenu = 1;
 function Menu(){
     if(auxMenu == 1)
@@ -110,12 +121,30 @@ function Menu(){
     }
 }
 
+
+
+
+
+
+
+
+// LÓGICA VOLTA AO TOPO DO RODAPÉ
+
 function VoltaTopo(){
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 }
+
+
+
+
+
+
+
+
+// LÓGICA LOGIN:
 
 function AbreLogin(){
     document.getElementById("DivFundo").style.display = "flex"
@@ -151,7 +180,6 @@ document.getElementById("InputTextoNomeLogin").addEventListener("blur", function
 
 });
 
-
 let sinalEmail = 0;
 
 document.getElementById("InputTextoEmailLogin").addEventListener("focus", function() {
@@ -170,7 +198,6 @@ document.getElementById("InputTextoEmailLogin").addEventListener("blur", functio
         "AnimaçaoDoInputEmailSemClick 0.1s linear forwards";
     }
 });
-
 
 let sinalSenha = 0;
 
@@ -225,14 +252,11 @@ inputNome.addEventListener("focus", function(){
 
 });
 
-
 inputNome.addEventListener("blur", function(){
 
     this.placeholder = placeholderNomeOriginal;
 
 });
-
-
 
 let input = document.getElementById("InputTextoEmailLogin");
 
@@ -265,19 +289,15 @@ inputSenha.addEventListener("focus", function(){
 
 });
 
-
 inputSenha.addEventListener("blur", function(){
 
     this.placeholder = placeholderSenhaOriginal;
 
 });
 
-
-
 let inputCpf = document.getElementById("InputTextoCpfLogin");
 
 let placeholderCpfOriginal = inputCpf.placeholder;
-
 
 inputCpf.addEventListener("focus", function(){
 
@@ -287,12 +307,20 @@ inputCpf.addEventListener("focus", function(){
 
 });
 
-
 inputCpf.addEventListener("blur", function(){
 
     this.placeholder = placeholderCpfOriginal;
 
 });
+
+
+
+
+
+
+
+
+// LÓGICA DO CONTATO:
 
 let div = document.getElementById("DivContato");
 
@@ -311,84 +339,3 @@ div.addEventListener("mouseleave", () => {
     document.getElementById("DivLogoWhatsApp").style.right = "-12.5%"
     document.getElementById("DivLogoWhatsApp").style.transform = "none"
 });
-
-function MudaTela(TelaDesejada, id = null) {
-    if (!TelaDesejada) return;
-
-    if (id !== null) {
-        sessionStorage.setItem("IDdetalhes", id);
-    }
-
-    const Janela = window.open(`/TELAS/${TelaDesejada}.html`, "_blank");
-
-    if (Janela) {
-        Janela.focus();
-    }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    PersonalizaDetalhes(IDdetalhes);
-});
-
-async function ConsultarCarroPorID(ID, AtributoDesejado) {
-
-    const resposta = await fetch(
-        `/api/ConsultarCarroPorID/${ID}/${AtributoDesejado}`
-    );
-
-    if (!resposta.ok) {
-        throw new Error("Erro ao consultar carro");
-    }
-
-    const Resultado = await resposta.text();
-
-    return Resultado;
-}
-
-async function ConsultarCarroDisponivelPorID(ID, AtributoDesejado) {
-
-    const resposta = await fetch(
-        `/api/ConsultarCarroDisponivelPorID/${ID}/${AtributoDesejado}`
-    );
-
-    if (!resposta.ok) {
-        throw new Error("Erro ao consultar carro");
-    }
-
-    const Resultado = await resposta.text();
-
-    return Resultado;
-}
-
-
-async function AtualizaCarros_Categorias(i) {
-
-    let modelo = await ConsultarCarroPorID(i, "modelo_carro");
-    let cor = await ConsultarCarroDisponivelPorID(i, "cor_carroDisponivel");
-    let Paragrafo = document.getElementById(`ParagrafoCarro${i}`)
-
-    document.getElementById(`DivCarro_${i}`).style.backgroundImage = `url('/imagens/${modelo}/${cor}.png')`;
-
-    if (Paragrafo) {
-        Paragrafo.innerText = modelo;
-    }
-}
-
-
-for (let i = 1; i <= 21; i++) {
-
-    const Div = document.getElementById(`DivCarro_${i}`);
-
-    if (Div) {
-
-        const Observador = new IntersectionObserver((entradas) => {
-
-            if (entradas[0].isIntersecting) {
-                AtualizaCarros_Categorias(i);
-            }
-
-        });
-
-        Observador.observe(Div);
-    }
-}

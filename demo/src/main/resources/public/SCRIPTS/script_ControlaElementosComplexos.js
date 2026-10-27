@@ -1,3 +1,28 @@
+// LÓGICA MUDA TELA:
+
+function MudaTela(TelaDesejada, id = null) {
+    if (!TelaDesejada) return;
+
+    if (id !== null) {
+        sessionStorage.setItem("IDdetalhes", id);
+    }
+
+    const Janela = window.open(`/TELAS/${TelaDesejada}.html`, "_blank");
+
+    if (Janela) {
+        Janela.focus();
+    }
+}
+
+
+
+
+
+
+
+
+//LÓGICA DE PERSONALIZAR A TELA DE DETALHES:
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const IDdetalhes = sessionStorage.getItem("IDdetalhes");
@@ -6,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
         PersonalizaDetalhes(IDdetalhes);
     }
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    PersonalizaDetalhes(IDdetalhes);
 });
 
 async function PersonalizaDetalhes(id) {
@@ -61,4 +90,83 @@ async function PersonalizaDetalhes(id) {
 
         console.error("Erro ao personalizar detalhes:", erro);
     }
+}
+
+
+
+
+
+
+
+
+// LÓGICA PERSONALIZAR DADOS DA ESTEIRA DA TELA INICIAL:
+
+async function AtualizaCarros_Categorias(i) {
+
+    let modelo = await ConsultarCarroPorID(i, "modelo_carro");
+    let cor = await ConsultarCarroDisponivelPorID(i, "cor_carroDisponivel");
+    let Paragrafo = document.getElementById(`ParagrafoCarro${i}`)
+
+    document.getElementById(`DivCarro_${i}`).style.backgroundImage = `url('/imagens/${modelo}/${cor}.png')`;
+
+    if (Paragrafo) {
+        Paragrafo.innerText = modelo;
+    }
+}
+
+for (let i = 1; i <= 21; i++) {
+
+    const Div = document.getElementById(`DivCarro_${i}`);
+
+    if (Div) {
+
+        const Observador = new IntersectionObserver((entradas) => {
+
+            if (entradas[0].isIntersecting) {
+                AtualizaCarros_Categorias(i);
+            }
+
+        });
+
+        Observador.observe(Div);
+    }
+}
+
+
+
+
+
+
+
+
+// LÓGICA PARA CONSULTAR OS METODOS DAS CLASSES:
+
+async function ConsultarCarroPorID(ID, AtributoDesejado) {
+
+    const resposta = await fetch(
+        `/api/ConsultarCarroPorID/${ID}/${AtributoDesejado}`
+    );
+
+    if (!resposta.ok) {
+        throw new Error("Erro ao consultar carro");
+    }
+
+    const Resultado = await resposta.text();
+
+    return Resultado;
+}
+
+async function ConsultarCarroDisponivelPorID(ID, AtributoDesejado) {
+
+    const resposta = await fetch(
+        `/api/ConsultarCarroDisponivelPorID/${ID}/${AtributoDesejado}`
+    );
+
+    if (!resposta.ok) {
+        throw new Error("Erro ao consultar carro");
+    }
+
+    const Resultado = await resposta.text();
+
+    return Resultado;
 }
