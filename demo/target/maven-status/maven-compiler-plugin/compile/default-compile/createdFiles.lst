@@ -1,4 +1,5 @@
 com/spartacus/interfaces/INTERFACE_telefone_cliente.class
+com/spartacus/validators/verificacoes.class
 com/spartacus/interfaces/INTERFACE_reembolso.class
 com/spartacus/model/desconto.class
 com/spartacus/interfaces/INTERFACE_compra.class

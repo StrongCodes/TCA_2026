@@ -301,3 +301,11 @@ body{
         top: auto;
     }
 }
+
+.ParagrafoErroCadastro{
+    display: none;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    bottom: 7.5%;
+}

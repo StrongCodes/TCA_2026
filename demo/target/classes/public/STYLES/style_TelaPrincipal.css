@@ -284,6 +284,21 @@ body{
     }
 }
 
+.ParagrafoErroLogin{
+    display: none;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    bottom: 13.5%;
+}
+
+.ParagrafoErroCadastro{
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10%;
+}
+
 .DivBotaoEntrarLogin{
     display: flex;
     align-items: center;

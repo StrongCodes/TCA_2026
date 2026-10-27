@@ -1,5 +1,7 @@
 // LÓGICA MUDA TELA:
 
+let Janela;
+
 function MudaTela(TelaDesejada, id = null) {
     if (!TelaDesejada) return;
 
@@ -7,7 +9,7 @@ function MudaTela(TelaDesejada, id = null) {
         sessionStorage.setItem("IDdetalhes", id);
     }
 
-    const Janela = window.open(`/TELAS/${TelaDesejada}.html`, "_blank");
+    Janela = window.open(`/TELAS/${TelaDesejada}.html`, "_blank");
 
     if (Janela) {
         Janela.focus();

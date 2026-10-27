@@ -39,11 +39,10 @@ function SelecionouCategoria(id){
     idAnterior = CategoriaAtual;
 }
 
-let intervalo = setInterval(() => {
+if (document.getElementById("DivCategoriaAnterior")) {
     SelecionouCategoria(0);
+}
 
-    clearInterval(intervalo);
-}, 1);
 
 let posicaoEsteira = 0;
 
@@ -160,158 +159,324 @@ function FechaLogin(){
     document.body.style.overflowY = "auto";
 }
 
-let sinalNome = 0;
+if (document.getElementById("InputTextoNomeLogin")) {
 
-document.getElementById("InputTextoNomeLogin").addEventListener("focus", function() {
+    let sinalNome = 0;
 
-    document.getElementById("ParagrafoNome").style.animation =
-        "AnimaçaoDoInputNomeClick 0.1s linear forwards";
+    document.getElementById("InputTextoNomeLogin").addEventListener("focus", function() {
 
-    sinalNome = 1;
-});
-
-document.getElementById("InputTextoNomeLogin").addEventListener("blur", function() {
-
-    if (sinalNome)
-    {
         document.getElementById("ParagrafoNome").style.animation =
-            "AnimaçaoDoInputNomeSemClick 0.1s linear forwards";
-    }
+            "AnimaçaoDoInputNomeClick 0.1s linear forwards";
 
-});
+        sinalNome = 1;
+    });
 
-let sinalEmail = 0;
+    document.getElementById("InputTextoNomeLogin").addEventListener("blur", function() {
 
-document.getElementById("InputTextoEmailLogin").addEventListener("focus", function() {
+        if (sinalNome && document.getElementById("InputTextoNomeLogin").value.trim() === "") {
+            document.getElementById("ParagrafoNome").style.animation =
+                "AnimaçaoDoInputNomeSemClick 0.1s linear forwards";
+        }
 
-    document.getElementById("ParagrafoEmail").style.animation =
-        "AnimaçaoDoInputEmailClick 0.1s linear forwards";
-    sinalEmail = 1;
+    });
 
-});
+    let sinalEmail = 0;
 
-document.getElementById("InputTextoEmailLogin").addEventListener("blur", function() {
+    document.getElementById("InputTextoEmailLogin").addEventListener("focus", function() {
 
-    if(sinalEmail)
-    {
         document.getElementById("ParagrafoEmail").style.animation =
-        "AnimaçaoDoInputEmailSemClick 0.1s linear forwards";
-    }
-});
+            "AnimaçaoDoInputEmailClick 0.1s linear forwards";
+        sinalEmail = 1;
 
-let sinalSenha = 0;
+    });
 
-document.getElementById("InputTextoSenhaLogin").addEventListener("focus", function() {
+    document.getElementById("InputTextoEmailLogin").addEventListener("blur", function() {
 
-    document.getElementById("ParagrafoSenha").style.animation =
-        "AnimaçaoDoInputSenhaClick 0.1s linear forwards";
+        if (sinalEmail && document.getElementById("InputTextoEmailLogin").value.trim() === "") {
+            document.getElementById("ParagrafoEmail").style.animation =
+                "AnimaçaoDoInputEmailSemClick 0.1s linear forwards";
+        }
+    });
 
-    sinalSenha = 1
-});
+    let sinalSenha = 0;
 
-document.getElementById("InputTextoSenhaLogin").addEventListener("blur", function() {
+    document.getElementById("InputTextoSenhaLogin").addEventListener("focus", function() {
 
-    if(sinalSenha)
-    {
         document.getElementById("ParagrafoSenha").style.animation =
-            "AnimaçaoDoInputSenhaSemClick 0.1s linear forwards";
-    }
+            "AnimaçaoDoInputSenhaClick 0.1s linear forwards";
 
-});
+        sinalSenha = 1
+    });
 
-let sinalCpf = 0;
+    document.getElementById("InputTextoSenhaLogin").addEventListener("blur", function() {
 
-document.getElementById("InputTextoCpfLogin").addEventListener("focus", function() {
+        if (sinalSenha && document.getElementById("InputTextoSenhaLogin").value.trim() === "") {
+            document.getElementById("ParagrafoSenha").style.animation =
+                "AnimaçaoDoInputSenhaSemClick 0.1s linear forwards";
+        }
 
-    document.getElementById("ParagrafoCpf").style.animation =
-        "AnimaçaoDoInputCpfClick 0.1s linear forwards";
+    });
 
-    sinalCpf = 1;
-});
+    let sinalCpf = 0;
 
-document.getElementById("InputTextoCpfLogin").addEventListener("blur", function() {
+    document.getElementById("InputTextoCpfLogin").addEventListener("focus", function() {
 
-    if (sinalCpf)
-    {
         document.getElementById("ParagrafoCpf").style.animation =
-            "AnimaçaoDoInputCpfSemClick 0.1s linear forwards";
-    }
+            "AnimaçaoDoInputCpfClick 0.1s linear forwards";
 
-});
+        sinalCpf = 1;
+    });
 
-let inputNome = document.getElementById("InputTextoNomeLogin");
+    document.getElementById("InputTextoCpfLogin").addEventListener("blur", function() {
 
-let placeholderNomeOriginal = inputNome.placeholder;
+        if (sinalCpf && document.getElementById("InputTextoCpfLogin").value.trim() === "") {
+            document.getElementById("ParagrafoCpf").style.animation =
+                "AnimaçaoDoInputCpfSemClick 0.1s linear forwards";
+        }
 
+    });
 
-inputNome.addEventListener("focus", function(){
+    let inputNome = document.getElementById("InputTextoNomeLogin");
 
-    setTimeout(() =>{
-        this.placeholder = "Seu nome completo";
-    }, 50)
+    let placeholderNomeOriginal = inputNome.placeholder;
 
-});
+    inputNome.addEventListener("focus", function(){
 
-inputNome.addEventListener("blur", function(){
+        setTimeout(() =>{
+            this.placeholder = "Seu nome completo";
+        }, 50)
 
-    this.placeholder = placeholderNomeOriginal;
+    });
 
-});
+    inputNome.addEventListener("blur", function(){
 
-let input = document.getElementById("InputTextoEmailLogin");
+        this.placeholder = placeholderNomeOriginal;
 
-let placeholderOriginal = input.placeholder;
+    });
 
-input.addEventListener("focus", function(){
+    let input = document.getElementById("InputTextoEmailLogin");
 
-    setTimeout(() =>{
-        this.placeholder = "seu@email.com";
-    }, 50)
-});
+    let placeholderOriginal = input.placeholder;
 
+    input.addEventListener("focus", function(){
 
-input.addEventListener("blur", function(){
-    this.placeholder = placeholderOriginal;
-});
-
-
-
-let inputSenha = document.getElementById("InputTextoSenhaLogin");
-
-let placeholderSenhaOriginal = inputSenha.placeholder;
+        setTimeout(() =>{
+            this.placeholder = "seu@email.com";
+        }, 50)
+    });
 
 
-inputSenha.addEventListener("focus", function(){
+    input.addEventListener("blur", function(){
+        this.placeholder = placeholderOriginal;
+    });
 
-    setTimeout(() =>{
-        this.placeholder = "Sua senha";
-    }, 50)
 
-});
 
-inputSenha.addEventListener("blur", function(){
+    let inputSenha = document.getElementById("InputTextoSenhaLogin");
 
-    this.placeholder = placeholderSenhaOriginal;
+    let placeholderSenhaOriginal = inputSenha.placeholder;
 
-});
 
-let inputCpf = document.getElementById("InputTextoCpfLogin");
+    inputSenha.addEventListener("focus", function(){
 
-let placeholderCpfOriginal = inputCpf.placeholder;
+        setTimeout(() =>{
+            this.placeholder = "Sua senha";
+        }, 50)
 
-inputCpf.addEventListener("focus", function(){
+    });
 
-    setTimeout(() =>{
-        this.placeholder = "000.000.000-00";
-    }, 50)
+    inputSenha.addEventListener("blur", function(){
 
-});
+        this.placeholder = placeholderSenhaOriginal;
 
-inputCpf.addEventListener("blur", function(){
+    });
 
-    this.placeholder = placeholderCpfOriginal;
+    let inputCpf = document.getElementById("InputTextoCpfLogin");
 
-});
+    let placeholderCpfOriginal = inputCpf.placeholder;
+
+    inputCpf.addEventListener("focus", function(){
+
+        setTimeout(() =>{
+            this.placeholder = "000.000.000-00";
+        }, 50)
+
+    });
+
+    inputCpf.addEventListener("blur", function(){
+
+        this.placeholder = placeholderCpfOriginal;
+
+    });
+}
+
+
+
+
+
+
+
+
+// LÓGICA CADASTRO:
+
+if (document.getElementById("InputTextoNomeCadastro")) {
+    let CadastroSinalNome = 0;
+
+    document.getElementById("InputTextoNomeCadastro").addEventListener("focus", function() {
+
+        document.getElementById("ParagrafoNome").style.animation =
+            "AnimaçaoDoInputNomeClick 0.1s linear forwards";
+
+        CadastroSinalNome = 1;
+    });
+
+    document.getElementById("InputTextoNomeCadastro").addEventListener("blur", function() {
+        
+        if (CadastroSinalNome && this.value.trim() === "") {
+            document.getElementById("ParagrafoNome").style.animation =
+                "AnimaçaoDoInputNomeSemClick 0.1s linear forwards";
+        }
+    
+    });
+
+
+    let CadastroSinalEmail = 0;
+
+    document.getElementById("InputTextoEmailCadastro").addEventListener("focus", function() {
+
+        document.getElementById("ParagrafoEmail").style.animation =
+            "AnimaçaoDoInputEmailClick 0.1s linear forwards";
+        CadastroSinalEmail = 1;
+
+    });
+
+    document.getElementById("InputTextoEmailCadastro").addEventListener("blur", function() {
+    
+        if (CadastroSinalEmail && this.value.trim() === "") {
+            document.getElementById("ParagrafoEmail").style.animation =
+                "AnimaçaoDoInputEmailSemClick 0.1s linear forwards";
+        }
+    
+    });
+
+
+    let CadastroSinalSenha = 0;
+
+    document.getElementById("InputTextoSenhaCadastro").addEventListener("focus", function() {
+
+        document.getElementById("ParagrafoSenha").style.animation =
+            "AnimaçaoDoInputSenhaClick 0.1s linear forwards";
+
+        CadastroSinalSenha = 1;
+    });
+
+    document.getElementById("InputTextoSenhaCadastro").addEventListener("blur", function() {
+        
+        if (CadastroSinalSenha && this.value.trim() === "") {
+            document.getElementById("ParagrafoSenha").style.animation =
+                "AnimaçaoDoInputSenhaSemClick 0.1s linear forwards";
+        }
+    
+    });
+
+    let CadastroSinalCpf = 0;
+
+    document.getElementById("InputTextoCpfCadastro").addEventListener("focus", function() {
+
+        document.getElementById("ParagrafoCpf").style.animation =
+            "AnimaçaoDoInputCpfClick 0.1s linear forwards";
+
+        CadastroSinalCpf = 1;
+    });
+
+    document.getElementById("InputTextoCpfCadastro").addEventListener("blur", function() {
+        
+        if (CadastroSinalCpf && this.value.trim() === "") {
+            document.getElementById("ParagrafoCpf").style.animation =
+                "AnimaçaoDoInputCpfSemClick 0.1s linear forwards";
+        }
+    
+    });
+
+    let CadastroInputNome = document.getElementById("InputTextoNomeCadastro");
+
+    let CadastroPlaceholderNomeOriginal = CadastroInputNome.placeholder;
+
+
+    CadastroInputNome.addEventListener("focus", function(){
+
+        setTimeout(() =>{
+            this.placeholder = "Seu nome completo";
+        }, 50)
+
+    });
+
+
+    CadastroInputNome.addEventListener("blur", function(){
+
+        this.placeholder = CadastroPlaceholderNomeOriginal;
+
+    });
+
+
+    let CadastroInput = document.getElementById("InputTextoEmailCadastro");
+
+    let CadastroPlaceholderOriginal = CadastroInput.placeholder;
+
+    CadastroInput.addEventListener("focus", function(){
+
+        setTimeout(() =>{
+            this.placeholder = "seu@email.com";
+        }, 50)
+    });
+
+
+    CadastroInput.addEventListener("blur", function(){
+        this.placeholder = CadastroPlaceholderOriginal;
+    });
+
+
+    let CadastroInputSenha = document.getElementById("InputTextoSenhaCadastro");
+
+    let CadastroPlaceholderSenhaOriginal = CadastroInputSenha.placeholder;
+
+
+    CadastroInputSenha.addEventListener("focus", function(){
+
+        setTimeout(() =>{
+            this.placeholder = "Sua senha";
+        }, 50)
+
+    });
+
+
+    CadastroInputSenha.addEventListener("blur", function(){
+
+        this.placeholder = CadastroPlaceholderSenhaOriginal;
+
+    });
+
+
+    let CadastroInputCpf = document.getElementById("InputTextoCpfCadastro");
+
+    let CadastroPlaceholderCpfOriginal = CadastroInputCpf.placeholder;
+
+
+    CadastroInputCpf.addEventListener("focus", function(){
+
+        setTimeout(() =>{
+            this.placeholder = "000.000.000-00";
+        }, 50)
+
+    });
+
+
+    CadastroInputCpf.addEventListener("blur", function(){
+
+        this.placeholder = CadastroPlaceholderCpfOriginal;
+
+    });
+}
 
 
 

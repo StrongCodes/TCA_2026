@@ -18,7 +18,7 @@ import com.spartacus.model.telefone_cliente;
 
 public class verificacoes {
 
-    public int ValidaCadastro_Cliente(
+    public static int ValidaCadastro_Cliente(
         String nome_cliente,
         String senha_cliente,
         String email_cliente,
@@ -64,42 +64,43 @@ public class verificacoes {
             return 0;
         }
     }
-}
 
-//    public int ValidaLogin_Cliente(String email_cliente, String senha_cliente){
 
-//        String sqlCount = """
-//            SELECT COUNT(*)
-//            FROM cliente
-//            """;
 
-//        String sql = """
-//            SELECT email_cliente, senha_cliente
-//            FROM cliente
-//            WHERE id_cliente_pk = ?
-//            """;
-    
-//        try (
-//            Connection conexao = ConexãoBD.conectar();
-//            PreparedStatement comandoTotal = conexao.prepareStatement(sqlCount)
-//        ) {
-//            ResultSet resultadoDaContagem = comandoTotal.executeQuery();
-//            int Valor = 0;
-//            if (resultadoDaContagem.next()) {
-//                Valor = resultadoDaContagem.getInt(1);
-//            }
-        
-//            try (ResultSet resultado = comando.executeQuery()) {
+    public static int ValidaLogin_Cliente(
+        String nome_cliente,
+        String email_cliente,
+        String senha_cliente,
+        String cpf_cliente
+    ){ 
+
+        String sql = """
+            SELECT * FROM cliente
+            WHERE 
+                email_cliente = ? OR
+                cpf_cliente = ?
+            """;
+        try (
+            Connection conexao = ConexãoBD.conectar();
+            PreparedStatement comando = conexao.prepareStatement(sql)
+        ) {     
             
-//                if (resultado.next()) {
+            comando.setString(1, email_cliente);
+            comando.setString(2, cpf_cliente);
 
-//                }
-//            }
+            try (ResultSet resultado = comando.executeQuery()) {
+            
+                if (resultado.next()) {
+                    return 1;
+                }
+                else{
+                    return 0;
+                }
+            }
         
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-    
-//        return null;
-//    }
-//}
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return -1;
+        }    
+    }
+}
