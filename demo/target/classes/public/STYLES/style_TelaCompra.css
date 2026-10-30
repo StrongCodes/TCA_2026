@@ -272,6 +272,117 @@ body{
     }
 }
 
+
+.DivDetalhesImagem{
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: none;
+    width: 70%;
+    height: 50vw;
+    border: 5px solid red;
+    position: absolute;
+    left: -5%;
+    top: -15%;
+}
+
+.DivOpçoesDetalhes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(39, 39, 39); 
+    width: 35%;
+    height: 100vh;
+    position: absolute;
+    right: 0%;  
+}
+
+.DivPrimaria{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    gap: 5px;
+}
+
+.DivPrimaria p{
+    margin: 0;
+}
+
+.ParagrafoModelo{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.ParagrafoAnoeCor{
+    color: rgb(173, 173, 173);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.ParagrafoPreço{
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.DivSeparaçao{
+    width: 90%;
+    height: 2px;
+    background-color: gray;
+    position: absolute;
+    top: 36%;
+}
+
+.ParagrafoEspecificaçoes{
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#DivCombustivel,
+#DivPotencia,
+#DivCilindros,
+#DivAvaliacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 428px;
+}
+
+.ParagrafoCombustivel,
+.ParagrafoPotencia,
+.ParagrafoCilindros,
+.ParagrafoAvaliacao{
+    color: gray;
+    font-style: italic;
+}
+
+.ParagrafoValorCombustivel,
+.ParagrafoValorPotencia,
+.ParagrafoValorCilindros,
+.ParagrafoValorAvaliacao{
+    color: white;
+    font-weight: bold;
+}
+
+.DivInformaçoes{
+    position: absolute;
+    top: 36%;
+    left: 5%;
+}
+
+.DivInformaçoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .DivContato{
     display: flex;
     width: 50px;

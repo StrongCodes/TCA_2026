@@ -172,3 +172,7 @@ async function ConsultarCarroDisponivelPorID(ID, AtributoDesejado) {
 
     return Resultado;
 }
+
+document.getElementById("DivBotaoComprar").onclick = function() {
+    MudaTela('TelaCompra', IDdetalhes);
+};
